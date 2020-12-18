@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Presentations | Hoang Nguyen</title>
+    <link>https://LeoUtas.github.io/talks/</link>
+      <atom:link href="https://LeoUtas.github.io/talks/index.xml" rel="self" type="application/rss+xml" />
+    <description>Presentations</description>
+    <generator>Wowchemy (https://wowchemy.com)</generator><language>en-us</language><copyright>© Hoang Nguyen, 2020</copyright>
+    <image>
+      <url>https://LeoUtas.github.io/media/social.png</url>
+      <title>Presentations</title>
+      <link>https://LeoUtas.github.io/talks/</link>
+    </image>
+    
+  </channel>
+</rss>

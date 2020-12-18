@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Python | Hoang Nguyen</title>
+    <link>https://LeoUtas.github.io/category/python/</link>
+      <atom:link href="https://LeoUtas.github.io/category/python/index.xml" rel="self" type="application/rss+xml" />
+    <description>Python</description>
+    <generator>Wowchemy (https://wowchemy.com)</generator><language>en-us</language><copyright>© Hoang Nguyen, 2020</copyright><lastBuildDate>Thu, 17 Dec 2020 18:08:38 -0330</lastBuildDate>
+    <image>
+      <url>https://LeoUtas.github.io/media/social.png</url>
+      <title>Python</title>
+      <link>https://LeoUtas.github.io/category/python/</link>
+    </image>
+    
+    <item>
+      <title>Data visualization in Fisheries Science using Python</title>
+      <link>https://LeoUtas.github.io/projects/data-viz-in-fs-python/</link>
+      <pubDate>Thu, 17 Dec 2020 18:08:38 -0330</pubDate>
+      <guid>https://LeoUtas.github.io/projects/data-viz-in-fs-python/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>

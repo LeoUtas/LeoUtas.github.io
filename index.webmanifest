@@ -1,0 +1,18 @@
+{
+  "name": "Hoang Nguyen",
+  "short_name": "Hoang Nguyen",
+  "lang": "en-us",
+  "theme_color": "#356FA3",
+  "background_color": "#356FA3",
+  "icons": [{
+    "src": "/images/icon_hu16603097881c9ca2895bc33ed489de4b_16719_192x192_fill_lanczos_center_2.png",
+    "sizes": "192x192",
+    "type": "image/png"
+    }, {
+    "src": "/images/icon_hu16603097881c9ca2895bc33ed489de4b_16719_512x512_fill_lanczos_center_2.png",
+    "sizes": "512x512",
+    "type": "image/png"
+     }],
+  "display": "standalone",
+  "start_url": "/?utm_source=web_app_manifest"
+}

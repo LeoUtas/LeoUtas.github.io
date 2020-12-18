@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Gambusia project | Hoang Nguyen</title>
+    <link>https://LeoUtas.github.io/category/gambusia-project/</link>
+      <atom:link href="https://LeoUtas.github.io/category/gambusia-project/index.xml" rel="self" type="application/rss+xml" />
+    <description>Gambusia project</description>
+    <generator>Wowchemy (https://wowchemy.com)</generator><language>en-us</language><copyright>© Hoang Nguyen, 2020</copyright><lastBuildDate>Fri, 11 Dec 2020 01:52:53 -0330</lastBuildDate>
+    <image>
+      <url>https://LeoUtas.github.io/media/social.png</url>
+      <title>Gambusia project</title>
+      <link>https://LeoUtas.github.io/category/gambusia-project/</link>
+    </image>
+    
+    <item>
+      <title>Daily ageing for Gambusia fish</title>
+      <link>https://LeoUtas.github.io/projects/honour_project_utas/</link>
+      <pubDate>Fri, 11 Dec 2020 01:52:53 -0330</pubDate>
+      <guid>https://LeoUtas.github.io/projects/honour_project_utas/</guid>
+      <description>&lt;p&gt;&lt;img src=&#34;Gambusia_female.gif&#34; alt=&#34;text&#34;&gt;&lt;/p&gt;
+&lt;p style=&#34;text-align: center;&#34;&gt; Figure 1. An illustration of &lt;em&gt; Gambusia holbrooki &lt;/em&gt;. Drawing by S. Laurie-Bourque. &lt;/p&gt;
+&lt;p style=&#34;text-align: justify;&#34;&gt; The introduction and establishment of non-indigenous species are severe issues corresponding with environmental and economic losses, particularly in freshwater habitats. The pest fish, &lt;em&gt; Gambusia holbrooki &lt;/em&gt;, is now a prioritized target of eradication from Tasmania. However, there is a limited quantitative analysis of their population dynamics due to little information on fish ageing. &lt;/p&gt;
+&lt;p style=&#34;text-align: justify;&#34;&gt; This study centred on the use of otoliths (sagittae and lapilli) to determine daily age for the species. Of 394 fish collected from March to June 2018, 193 (~50%) were successfully aged. Sample preparation was successful for lapilli removed from fish, while preparation of sagittae succeeded for the full range of sampled fish (7mm ≤ TL ≤41 mm). Growth increments appeared as a combination of an opaque and a translucent band in polished otoliths. Ageing reared fish found that increment counts rarely equalled but proportionally correlated to known age. Therefore, estimates of age for wild fish were computed using numbers of increments counted from reading sagittae. &lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;growth-ring.jpg&#34; alt=&#34;text&#34;&gt;&lt;/p&gt;
+&lt;p style = &#34;text-align: center;&#34;&gt; Figure 2. Growth increments as observed in a polished sagitta of a wild fish (TL=19 mm, estimated age=38 days post birth). Scale bar = 20 µm. &lt;/p&gt;
+&lt;p style=&#34;text-align: justify;&#34;&gt; A multi-model approach was applied to describe the growth of &lt;em&gt; G. holbrooki   &lt;/em&gt; versus daily time-series data. Akaike’s information criteria revealed that the power equation outperformed the other candidate models in processing reared fish (Wi = 98% and 59% for females and males respectively) and female wild fish data (Wi = 35%). Von Bertalanffy and logistic equations were best fitted to male fish in the wild (Wi = 27%). Using Pauly&#39;s estimator, estimates of the natural mortality rate were 0.035 day-1 and 0.16 day-1 for wild females and males. &lt;/p&gt;
+&lt;p style=&#34;text-align: justify;&#34;&gt; It was evident that the birth rate was closely correlated with mean temperature changes in Tasmania with peak reproduction in January 2018. Growth rate significantly differed among cohorts birthed at different times. On average, the means of growth rate estimated for the young cohort (0.28 mm/day) was much greater than that of the over−winter cohort (0.12 mm/day). &lt;/p&gt;
+&lt;p style=&#34;text-align: justify;&#34;&gt; The wild sample ranged from fish of TL=13 mm to 63 mm with the mode of length-frequency from 22−26mm. Mature females dominated the population (2.3 female:1 male) and were typically greater than mature males in total length and total weight. &lt;/p&gt;
+&lt;p style=&#34;text-align: justify;&#34;&gt; This study, for the first time, provided evidence of using otoliths (sagittae and lapilli) in determining the daily age of &lt;em&gt; G. holbrooki &lt;/em&gt; with the opportunity of quantitively examining biological characteristics and the dynamics of a population in Tasmania, Australia; which can be used to inform pest control and eradication programs both locally and globally. &lt;/p&gt;
+&lt;p style=&#34;text-align: justify; display:none;&#34;&gt; For the full text of my thesis, please refer to &lt;a href = &#34;/projects/honour_project_UTAS/HOANG-Thesis-FINAL.pdf&#34;&gt; Thesis. &lt;/a&gt;&lt;/p&gt;
+&lt;p style=&#34;text-align: justify;&#34;&gt; For the full text of my thesis, please refer to &lt;a href = &#34;/files/honour_project_UTAS/HOANG-Thesis-FINAL.pdf&#34;&gt; Thesis. &lt;/a&gt;&lt;/p&gt;
+&lt;p style=&#34;text-align: justify;&#34;&gt; For my presentation, please refer to &lt;a href = &#34;/files/honour_project_UTAS/HOANG-Thesis-FINAL.pptx&#34;&gt; Presentation. &lt;/a&gt;&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Presentation of daily ageing for Gambusia fish</title>
+      <link>https://LeoUtas.github.io/slides/honour_project_utas/</link>
+      <pubDate>Fri, 11 Dec 2020 00:00:00 +0000</pubDate>
+      <guid>https://LeoUtas.github.io/slides/honour_project_utas/</guid>
+      <description>&lt;p&gt;&lt;img src=&#34;1.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;hr&gt;
+&lt;p&gt;&lt;img src=&#34;2.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;hr&gt;
+&lt;p&gt;&lt;img src=&#34;3.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;hr&gt;
+&lt;p&gt;&lt;img src=&#34;4.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;hr&gt;
+&lt;p&gt;&lt;img src=&#34;5.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;hr&gt;
+&lt;p&gt;&lt;img src=&#34;6.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;hr&gt;
+&lt;p&gt;&lt;img src=&#34;7.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;hr&gt;
+&lt;p&gt;&lt;img src=&#34;8.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;hr&gt;
+&lt;p&gt;&lt;img src=&#34;9.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;hr&gt;
+&lt;p&gt;&lt;img src=&#34;10.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;hr&gt;
+&lt;p&gt;&lt;img src=&#34;11.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;hr&gt;
+&lt;p&gt;&lt;img src=&#34;12.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;hr&gt;
+&lt;p&gt;&lt;img src=&#34;13.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;hr&gt;
+&lt;p&gt;&lt;img src=&#34;14.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;hr&gt;
+&lt;p&gt;&lt;img src=&#34;15.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;hr&gt;
+&lt;p&gt;&lt;img src=&#34;16.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;hr&gt;
+&lt;p&gt;&lt;img src=&#34;17.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;hr&gt;
+&lt;p&gt;&lt;img src=&#34;18.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;hr&gt;
+&lt;p&gt;&lt;img src=&#34;19.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;hr&gt;
+&lt;p&gt;&lt;img src=&#34;20.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;hr&gt;
+&lt;p&gt;&lt;img src=&#34;21.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;hr&gt;
+&lt;p&gt;&lt;img src=&#34;22.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;hr&gt;
+&lt;p&gt;&lt;img src=&#34;23.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;hr&gt;
+&lt;p&gt;&lt;img src=&#34;24.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;hr&gt;
+&lt;p&gt;&lt;img src=&#34;25.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;hr&gt;
+&lt;p&gt;&lt;img src=&#34;26.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;hr&gt;
+&lt;p&gt;&lt;img src=&#34;27.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;hr&gt;
+&lt;p&gt;&lt;img src=&#34;28.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;hr&gt;
+&lt;p&gt;&lt;a href=&#34;https://www.imas.utas.edu.au/news/news-items/fish-pest-research-to-benefit-two-countries&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;More about the Gambusia project&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://www.ifs.tas.gov.au/news/2014/jul/15/arc-funding-for-genetic-control-of-gambusia&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;ARC Funding for genetic control of Gambusia&lt;/a&gt;&lt;/p&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>
