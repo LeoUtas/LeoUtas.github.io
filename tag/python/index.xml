@@ -1,23 +1,43 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Python | Hoang Nguyen</title>
+    <title>python | Hoang Nguyen</title>
     <link>https://LeoUtas.github.io/tag/python/</link>
       <atom:link href="https://LeoUtas.github.io/tag/python/index.xml" rel="self" type="application/rss+xml" />
-    <description>Python</description>
+    <description>python</description>
     <generator>Wowchemy (https://wowchemy.com)</generator><language>en-us</language><copyright>© Hoang Nguyen, 2020</copyright><lastBuildDate>Thu, 17 Dec 2020 18:08:38 -0330</lastBuildDate>
     <image>
       <url>https://LeoUtas.github.io/media/social.png</url>
-      <title>Python</title>
+      <title>python</title>
       <link>https://LeoUtas.github.io/tag/python/</link>
     </image>
     
     <item>
-      <title>Data visualization in Fisheries Science using Python</title>
+      <title>Data visualization in fisheries science using Python</title>
       <link>https://LeoUtas.github.io/projects/data-viz-in-fs-python/</link>
       <pubDate>Thu, 17 Dec 2020 18:08:38 -0330</pubDate>
       <guid>https://LeoUtas.github.io/projects/data-viz-in-fs-python/</guid>
-      <description></description>
+      <description>&lt;p &gt;&lt;blockquote style=&#34;text-align: center;&#34; cite = &#34;https://en.wikipedia.org/wiki/A_picture_is_worth_a_thousand_words&#34;&gt; &#34;A picture is worth a thousand words&#34; &lt;/blockquote&gt;&lt;/p&gt;
+
+&lt;p style=&#34;text-align: justify&#34;&gt;This is a collection of fisheries visualization examples using python, inspired by the work of &lt;a href = &#34;https://scholar.google.ca/citations?user=e_VIsbsAAAAJ&amp;hl=en&#34; target = &#34;blank&#34;&gt; Dr. Noel Cadigan &lt;/a&gt;, &lt;a href = &#34;https://scholar.google.ca/citations?user=u4D9FmgAAAAJ&amp;hl=en&#34; target = &#34;blank&#34;&gt; Dr. Jin Gao &lt;/a&gt;, and &lt;a href = &#34;https://www.researchgate.net/profile/Malcolm_Haddon&#34; target = &#34;blank&#34;&gt; Dr. Malcolm Haddon. &lt;/a&gt; &lt;/p&gt;
+
+
+&lt;!-- Project information --&gt;
+&lt;br&gt;&lt;br&gt;&lt;br&gt;
+&lt;ul style=&#34;font-family: &#39;Courier New&#39;, Courier, monospace; font-size: .8rem;&#34;&gt;
+    &lt;li&gt; Categories: personal project &lt;/li&gt;
+    &lt;li&gt; Status: on-going &lt;/li&gt;
+    &lt;li&gt; Timeline: Dec, 2020 to Feb, 2021 &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;!-- back to top button  --&gt;
+&lt;script src=&#34;https://unpkg.com/vanilla-back-to-top@7.2.1/dist/vanilla-back-to-top.min.js&#34;&gt;&lt;/script&gt;
+&lt;script&gt;addBackToTop({
+  diameter: 80,
+  backgroundColor: &#39;#5D7C96&#39;,
+  textColor: &#39;#fff&#39;
+})&lt;/script&gt;
+</description>
     </item>
     
   </channel>

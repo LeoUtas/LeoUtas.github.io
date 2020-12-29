@@ -17,8 +17,28 @@
       <link>https://LeoUtas.github.io/projects/redfish_phd_mun/</link>
       <pubDate>Fri, 11 Dec 2020 02:13:06 -0330</pubDate>
       <guid>https://LeoUtas.github.io/projects/redfish_phd_mun/</guid>
-      <description>&lt;p&gt;&lt;img src=&#34;Redfish.jpg&#34; alt=&#34;text&#34;&gt;&lt;/p&gt;
-&lt;p style = &#34;text-align: center;&#34;&gt; An illustration of deep-sea redfish; source: &lt;a href = &#34;https://thisfish.info/fishery/species/redfish/&#34;&gt; This Fish &lt;/a&gt; &lt;/p&gt;</description>
+      <description>
+
+&lt;img src=&#34;featured.jpg&#34;&gt;
+&lt;p style = &#34;text-align: center;&#34;&gt; An illustration of deep-sea redfish; source: &lt;a href = &#34;https://thisfish.info/fishery/species/redfish/&#34;&gt; This Fish &lt;/a&gt; &lt;/p&gt;
+
+
+
+
+&lt;!-- Project information --&gt;
+&lt;br&gt;&lt;br&gt;&lt;br&gt;
+&lt;ul style=&#34;font-family: &#39;Courier New&#39;, Courier, monospace; font-size: .8rem;&#34;&gt;
+    &lt;li&gt; Categories: PhD project at &lt;a href=&#34;https://www.mun.ca/&#34; target=&#34;blank&#34;&gt; Memorial University of Newfoundland&lt;/a&gt;, sponsored by&lt;a href=&#34;https://www.mi.mun.ca/departments/centreforfisheriesecosystemsresearch/&#34; target=&#34;blank&#34;&gt; Centre for Fisheries Ecosystems Research &lt;/a&gt; &lt;/li&gt;
+    &lt;li&gt; Status: on-going &lt;/li&gt;
+    &lt;li&gt; Timeline: Jan, 2020 to Jan, 2024 (anticipated) &lt;/li&gt;
+&lt;/ul&gt;
+&lt;!-- back to top button  --&gt;
+&lt;script src=&#34;https://unpkg.com/vanilla-back-to-top@7.2.1/dist/vanilla-back-to-top.min.js&#34;&gt;&lt;/script&gt;
+&lt;script&gt;addBackToTop({
+  diameter: 80,
+  backgroundColor: &#39;#5D7C96&#39;,
+  textColor: &#39;#fff&#39;
+})&lt;/script&gt;</description>
     </item>
     
     <item>

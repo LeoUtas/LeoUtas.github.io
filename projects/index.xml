@@ -5,7 +5,7 @@
     <link>https://LeoUtas.github.io/projects/</link>
       <atom:link href="https://LeoUtas.github.io/projects/index.xml" rel="self" type="application/rss+xml" />
     <description>Projects</description>
-    <generator>Wowchemy (https://wowchemy.com)</generator><language>en-us</language><copyright>© Hoang Nguyen, 2020</copyright><lastBuildDate>Thu, 17 Dec 2020 18:13:41 -0330</lastBuildDate>
+    <generator>Wowchemy (https://wowchemy.com)</generator><language>en-us</language><copyright>© Hoang Nguyen, 2020</copyright><lastBuildDate>Sat, 26 Dec 2020 23:40:55 -0330</lastBuildDate>
     <image>
       <url>https://LeoUtas.github.io/media/social.png</url>
       <title>Projects</title>
@@ -13,27 +13,102 @@
     </image>
     
     <item>
+      <title>Data visualization in fisheries science using D3.js</title>
+      <link>https://LeoUtas.github.io/projects/data-viz-in-fs-d3js/</link>
+      <pubDate>Sat, 26 Dec 2020 23:40:55 -0330</pubDate>
+      <guid>https://LeoUtas.github.io/projects/data-viz-in-fs-d3js/</guid>
+      <description>&lt;p style=&#34;text-align: justify&#34;&gt;This is a collection of fisheries visualization examples using D3.js, inspired by the work of &lt;a href = &#34;https://scholar.google.ca/citations?user=e_VIsbsAAAAJ&amp;hl=en&#34; target = &#34;blank&#34;&gt; Dr. Noel Cadigan &lt;/a&gt;, &lt;a href = &#34;https://scholar.google.ca/citations?user=u4D9FmgAAAAJ&amp;hl=en&#34; target = &#34;blank&#34;&gt; Dr. Jin Gao &lt;/a&gt;, and &lt;a href = &#34;https://www.researchgate.net/profile/Malcolm_Haddon&#34; target = &#34;blank&#34;&gt; Dr. Malcolm Haddon. &lt;/a&gt; &lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
       <title>Traditional modelling in Fisheries Science using R</title>
       <link>https://LeoUtas.github.io/projects/modelling-in-fs-r/</link>
       <pubDate>Thu, 17 Dec 2020 18:13:41 -0330</pubDate>
       <guid>https://LeoUtas.github.io/projects/modelling-in-fs-r/</guid>
-      <description></description>
+      <description>
+
+
+&lt;!-- Project information --&gt;
+&lt;br&gt;&lt;br&gt;&lt;br&gt;
+&lt;ul style=&#34;font-family: &#39;Courier New&#39;, Courier, monospace; font-size: .8rem;&#34;&gt;
+    &lt;li&gt; Categories: personal project &lt;/li&gt;
+    &lt;li&gt; Status: on-going &lt;/li&gt;
+    &lt;li&gt; Timeline: Dec, 2020 to Feb, 2021 &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;!-- back to top button  --&gt;
+&lt;script src=&#34;https://unpkg.com/vanilla-back-to-top@7.2.1/dist/vanilla-back-to-top.min.js&#34;&gt;&lt;/script&gt;
+&lt;script&gt;addBackToTop({
+  diameter: 80,
+  backgroundColor: &#39;#5D7C96&#39;,
+  textColor: &#39;#fff&#39;
+})&lt;/script&gt;
+</description>
     </item>
     
     <item>
-      <title>Data visualization in Fisheries Science using R</title>
+      <title>Data visualization in fisheries science using R</title>
       <link>https://LeoUtas.github.io/projects/data-viz-in-fs-r/</link>
       <pubDate>Thu, 17 Dec 2020 18:08:45 -0330</pubDate>
       <guid>https://LeoUtas.github.io/projects/data-viz-in-fs-r/</guid>
-      <description></description>
+      <description>&lt;p &gt;&lt;blockquote style=&#34;text-align: center;&#34; cite = &#34;https://en.wikipedia.org/wiki/A_picture_is_worth_a_thousand_words&#34;&gt; &#34;A picture is worth a thousand words&#34; &lt;/blockquote&gt;&lt;/p&gt;
+
+&lt;p style=&#34;text-align: justify;&#34;&gt;This is a collection of fisheries visualization examples using R, inspired by the work of &lt;a href = &#34;https://scholar.google.ca/citations?user=e_VIsbsAAAAJ&amp;hl=en&#34; target = &#34;blank&#34;&gt; Dr. Noel Cadigan &lt;/a&gt;, &lt;a href = &#34;https://scholar.google.ca/citations?user=u4D9FmgAAAAJ&amp;hl=en&#34; target = &#34;blank&#34;&gt; Dr. Jin Gao &lt;/a&gt;, and &lt;a href = &#34;https://www.researchgate.net/profile/Malcolm_Haddon&#34; target = &#34;blank&#34;&gt; Dr. Malcolm Haddon. &lt;/a&gt; &lt;/p&gt;
+&lt;br&gt;
+
+
+&lt;div class=&#34;alert alert-note&#34;&gt;
+  &lt;div&gt;
+    &lt;a href=&#34;\blogs\blog1\index.html&#34;&gt; Bar charts in fisheries data visualization &lt;/a&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+
+
+&lt;!-- Project information --&gt;
+&lt;br&gt;&lt;br&gt;&lt;br&gt;
+&lt;ul style=&#34;font-family: &#39;Courier New&#39;, Courier, monospace; font-size: .8rem;&#34;&gt;
+    &lt;li&gt; Categories: personal project &lt;/li&gt;
+    &lt;li&gt; Status: on-going &lt;/li&gt;
+    &lt;li&gt; Timeline: Dec, 2020 to Feb, 2021 &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;!-- back to top button  --&gt;
+&lt;script src=&#34;https://unpkg.com/vanilla-back-to-top@7.2.1/dist/vanilla-back-to-top.min.js&#34;&gt;&lt;/script&gt;
+&lt;script&gt;addBackToTop({
+  diameter: 80,
+  backgroundColor: &#39;#5D7C96&#39;,
+  textColor: &#39;#fff&#39;
+})&lt;/script&gt;
+</description>
     </item>
     
     <item>
-      <title>Data visualization in Fisheries Science using Python</title>
+      <title>Data visualization in fisheries science using Python</title>
       <link>https://LeoUtas.github.io/projects/data-viz-in-fs-python/</link>
       <pubDate>Thu, 17 Dec 2020 18:08:38 -0330</pubDate>
       <guid>https://LeoUtas.github.io/projects/data-viz-in-fs-python/</guid>
-      <description></description>
+      <description>&lt;p &gt;&lt;blockquote style=&#34;text-align: center;&#34; cite = &#34;https://en.wikipedia.org/wiki/A_picture_is_worth_a_thousand_words&#34;&gt; &#34;A picture is worth a thousand words&#34; &lt;/blockquote&gt;&lt;/p&gt;
+
+&lt;p style=&#34;text-align: justify&#34;&gt;This is a collection of fisheries visualization examples using python, inspired by the work of &lt;a href = &#34;https://scholar.google.ca/citations?user=e_VIsbsAAAAJ&amp;hl=en&#34; target = &#34;blank&#34;&gt; Dr. Noel Cadigan &lt;/a&gt;, &lt;a href = &#34;https://scholar.google.ca/citations?user=u4D9FmgAAAAJ&amp;hl=en&#34; target = &#34;blank&#34;&gt; Dr. Jin Gao &lt;/a&gt;, and &lt;a href = &#34;https://www.researchgate.net/profile/Malcolm_Haddon&#34; target = &#34;blank&#34;&gt; Dr. Malcolm Haddon. &lt;/a&gt; &lt;/p&gt;
+
+
+&lt;!-- Project information --&gt;
+&lt;br&gt;&lt;br&gt;&lt;br&gt;
+&lt;ul style=&#34;font-family: &#39;Courier New&#39;, Courier, monospace; font-size: .8rem;&#34;&gt;
+    &lt;li&gt; Categories: personal project &lt;/li&gt;
+    &lt;li&gt; Status: on-going &lt;/li&gt;
+    &lt;li&gt; Timeline: Dec, 2020 to Feb, 2021 &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;!-- back to top button  --&gt;
+&lt;script src=&#34;https://unpkg.com/vanilla-back-to-top@7.2.1/dist/vanilla-back-to-top.min.js&#34;&gt;&lt;/script&gt;
+&lt;script&gt;addBackToTop({
+  diameter: 80,
+  backgroundColor: &#39;#5D7C96&#39;,
+  textColor: &#39;#fff&#39;
+})&lt;/script&gt;
+</description>
     </item>
     
     <item>
@@ -41,8 +116,28 @@
       <link>https://LeoUtas.github.io/projects/redfish_phd_mun/</link>
       <pubDate>Fri, 11 Dec 2020 02:13:06 -0330</pubDate>
       <guid>https://LeoUtas.github.io/projects/redfish_phd_mun/</guid>
-      <description>&lt;p&gt;&lt;img src=&#34;Redfish.jpg&#34; alt=&#34;text&#34;&gt;&lt;/p&gt;
-&lt;p style = &#34;text-align: center;&#34;&gt; An illustration of deep-sea redfish; source: &lt;a href = &#34;https://thisfish.info/fishery/species/redfish/&#34;&gt; This Fish &lt;/a&gt; &lt;/p&gt;</description>
+      <description>
+
+&lt;img src=&#34;featured.jpg&#34;&gt;
+&lt;p style = &#34;text-align: center;&#34;&gt; An illustration of deep-sea redfish; source: &lt;a href = &#34;https://thisfish.info/fishery/species/redfish/&#34;&gt; This Fish &lt;/a&gt; &lt;/p&gt;
+
+
+
+
+&lt;!-- Project information --&gt;
+&lt;br&gt;&lt;br&gt;&lt;br&gt;
+&lt;ul style=&#34;font-family: &#39;Courier New&#39;, Courier, monospace; font-size: .8rem;&#34;&gt;
+    &lt;li&gt; Categories: PhD project at &lt;a href=&#34;https://www.mun.ca/&#34; target=&#34;blank&#34;&gt; Memorial University of Newfoundland&lt;/a&gt;, sponsored by&lt;a href=&#34;https://www.mi.mun.ca/departments/centreforfisheriesecosystemsresearch/&#34; target=&#34;blank&#34;&gt; Centre for Fisheries Ecosystems Research &lt;/a&gt; &lt;/li&gt;
+    &lt;li&gt; Status: on-going &lt;/li&gt;
+    &lt;li&gt; Timeline: Jan, 2020 to Jan, 2024 (anticipated) &lt;/li&gt;
+&lt;/ul&gt;
+&lt;!-- back to top button  --&gt;
+&lt;script src=&#34;https://unpkg.com/vanilla-back-to-top@7.2.1/dist/vanilla-back-to-top.min.js&#34;&gt;&lt;/script&gt;
+&lt;script&gt;addBackToTop({
+  diameter: 80,
+  backgroundColor: &#39;#5D7C96&#39;,
+  textColor: &#39;#fff&#39;
+})&lt;/script&gt;</description>
     </item>
     
     <item>
@@ -50,20 +145,42 @@
       <link>https://LeoUtas.github.io/projects/honour_project_utas/</link>
       <pubDate>Fri, 11 Dec 2020 01:52:53 -0330</pubDate>
       <guid>https://LeoUtas.github.io/projects/honour_project_utas/</guid>
-      <description>&lt;p&gt;&lt;img src=&#34;Gambusia_female.gif&#34; alt=&#34;text&#34;&gt;&lt;/p&gt;
+      <description>
+&lt;img src=&#34;Gambusia_female.gif&#34;&gt;
 &lt;p style=&#34;text-align: center;&#34;&gt; Figure 1. An illustration of &lt;em&gt; Gambusia holbrooki &lt;/em&gt;. Drawing by S. Laurie-Bourque. &lt;/p&gt;
+
 &lt;p style=&#34;text-align: justify;&#34;&gt; The introduction and establishment of non-indigenous species are severe issues corresponding with environmental and economic losses, particularly in freshwater habitats. The pest fish, &lt;em&gt; Gambusia holbrooki &lt;/em&gt;, is now a prioritized target of eradication from Tasmania. However, there is a limited quantitative analysis of their population dynamics due to little information on fish ageing. &lt;/p&gt;
+
 &lt;p style=&#34;text-align: justify;&#34;&gt; This study centred on the use of otoliths (sagittae and lapilli) to determine daily age for the species. Of 394 fish collected from March to June 2018, 193 (~50%) were successfully aged. Sample preparation was successful for lapilli removed from fish, while preparation of sagittae succeeded for the full range of sampled fish (7mm ≤ TL ≤41 mm). Growth increments appeared as a combination of an opaque and a translucent band in polished otoliths. Ageing reared fish found that increment counts rarely equalled but proportionally correlated to known age. Therefore, estimates of age for wild fish were computed using numbers of increments counted from reading sagittae. &lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;growth-ring.jpg&#34; alt=&#34;text&#34;&gt;&lt;/p&gt;
+
+&lt;img src=&#34;growth-ring.jpg&#34;&gt;
 &lt;p style = &#34;text-align: center;&#34;&gt; Figure 2. Growth increments as observed in a polished sagitta of a wild fish (TL=19 mm, estimated age=38 days post birth). Scale bar = 20 µm. &lt;/p&gt;
+
 &lt;p style=&#34;text-align: justify;&#34;&gt; A multi-model approach was applied to describe the growth of &lt;em&gt; G. holbrooki   &lt;/em&gt; versus daily time-series data. Akaike’s information criteria revealed that the power equation outperformed the other candidate models in processing reared fish (Wi = 98% and 59% for females and males respectively) and female wild fish data (Wi = 35%). Von Bertalanffy and logistic equations were best fitted to male fish in the wild (Wi = 27%). Using Pauly&#39;s estimator, estimates of the natural mortality rate were 0.035 day-1 and 0.16 day-1 for wild females and males. &lt;/p&gt;
+
 &lt;p style=&#34;text-align: justify;&#34;&gt; It was evident that the birth rate was closely correlated with mean temperature changes in Tasmania with peak reproduction in January 2018. Growth rate significantly differed among cohorts birthed at different times. On average, the means of growth rate estimated for the young cohort (0.28 mm/day) was much greater than that of the over−winter cohort (0.12 mm/day). &lt;/p&gt;
+
 &lt;p style=&#34;text-align: justify;&#34;&gt; The wild sample ranged from fish of TL=13 mm to 63 mm with the mode of length-frequency from 22−26mm. Mature females dominated the population (2.3 female:1 male) and were typically greater than mature males in total length and total weight. &lt;/p&gt;
+
 &lt;p style=&#34;text-align: justify;&#34;&gt; This study, for the first time, provided evidence of using otoliths (sagittae and lapilli) in determining the daily age of &lt;em&gt; G. holbrooki &lt;/em&gt; with the opportunity of quantitively examining biological characteristics and the dynamics of a population in Tasmania, Australia; which can be used to inform pest control and eradication programs both locally and globally. &lt;/p&gt;
-&lt;p style=&#34;text-align: justify; display:none;&#34;&gt; For the full text of my thesis, please refer to &lt;a href = &#34;/projects/honour_project_UTAS/HOANG-Thesis-FINAL.pdf&#34;&gt; Thesis. &lt;/a&gt;&lt;/p&gt;
-&lt;p style=&#34;text-align: justify;&#34;&gt; For the full text of my thesis, please refer to &lt;a href = &#34;/files/honour_project_UTAS/HOANG-Thesis-FINAL.pdf&#34;&gt; Thesis. &lt;/a&gt;&lt;/p&gt;
-&lt;p style=&#34;text-align: justify;&#34;&gt; For my presentation, please refer to &lt;a href = &#34;/files/honour_project_UTAS/HOANG-Thesis-FINAL.pptx&#34;&gt; Presentation. &lt;/a&gt;&lt;/p&gt;
-</description>
+
+&lt;p style=&#34;text-align: justify;&#34;&gt; For the full text of my thesis, please refer to &lt;a href = &#34;HOANG-Thesis-FINAL.pdf&#34; target = &#34;blank&#34;&gt; thesis. &lt;/a&gt;&lt;/p&gt;
+
+&lt;p style=&#34;text-align: justify;&#34;&gt; For my presentation, please refer to &lt;a href = &#34;HOANG-Presentation-FINAL.pptx&#34; target = &#34;blank&#34;&gt; presentation &lt;/a&gt; or view the slides above.&lt;/p&gt;
+
+&lt;!-- Project information --&gt;
+&lt;ul style=&#34;font-family: &#39;Courier New&#39;, Courier, monospace; font-size: .8rem;&#34;&gt;
+    &lt;li&gt; Categories: honour project at &lt;a href=&#34;https://www.utas.edu.au/&#34; target=&#34;blank&#34;&gt; University of Tasmania&lt;/a&gt;, sponsored by&lt;a href=&#34;https://researchdata.edu.au/linkage-projects-grant-id-lp140100428/618634&#34; target=&#34;blank&#34;&gt; ARC linkage-projects-grant-id-lp140100428 &lt;/a&gt; &lt;/li&gt;
+    &lt;li&gt; Status: closed &lt;/li&gt;
+    &lt;li&gt; Timeline: Dec, 2017 to Dec, 2018 &lt;/li&gt;
+&lt;/ul&gt;
+&lt;!-- back to top button  --&gt;
+&lt;script src=&#34;https://unpkg.com/vanilla-back-to-top@7.2.1/dist/vanilla-back-to-top.min.js&#34;&gt;&lt;/script&gt;
+&lt;script&gt;addBackToTop({
+  diameter: 80,
+  backgroundColor: &#39;#5D7C96&#39;,
+  textColor: &#39;#fff&#39;
+})&lt;/script&gt;</description>
     </item>
     
   </channel>

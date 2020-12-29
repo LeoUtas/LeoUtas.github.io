@@ -3,58 +3,68 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>https://LeoUtas.github.io/blogs/blog1/</loc>
+    <lastmod>2020-12-28T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://LeoUtas.github.io/blogs/</loc>
-    <lastmod>2020-12-17T18:28:31-03:30</lastmod>
+    <lastmod>2020-12-28T00:00:00+00:00</lastmod>
   </url>
   
   <url>
     <loc>https://LeoUtas.github.io/categories/</loc>
-    <lastmod>2020-12-17T18:28:31-03:30</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://LeoUtas.github.io/tag/data-exploration/</loc>
-    <lastmod>2020-12-17T18:28:31-03:30</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://LeoUtas.github.io/category/data-exploration/</loc>
-    <lastmod>2020-12-17T18:28:31-03:30</lastmod>
+    <lastmod>2020-12-28T00:00:00+00:00</lastmod>
   </url>
   
   <url>
     <loc>https://LeoUtas.github.io/tag/data-visualization/</loc>
-    <lastmod>2020-12-17T18:28:31-03:30</lastmod>
+    <lastmod>2020-12-28T00:00:00+00:00</lastmod>
   </url>
   
   <url>
     <loc>https://LeoUtas.github.io/category/data-visualization/</loc>
-    <lastmod>2020-12-17T18:28:31-03:30</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://LeoUtas.github.io/blogs/data-viz-r-1/</loc>
-    <lastmod>2020-12-17T18:28:31-03:30</lastmod>
+    <lastmod>2020-12-28T00:00:00+00:00</lastmod>
   </url>
   
   <url>
     <loc>https://LeoUtas.github.io/</loc>
-    <lastmod>2020-12-17T18:28:31-03:30</lastmod>
+    <lastmod>2020-12-28T00:00:00+00:00</lastmod>
   </url>
   
   <url>
     <loc>https://LeoUtas.github.io/tag/r/</loc>
-    <lastmod>2020-12-17T18:28:31-03:30</lastmod>
+    <lastmod>2020-12-28T00:00:00+00:00</lastmod>
   </url>
   
   <url>
     <loc>https://LeoUtas.github.io/category/r/</loc>
-    <lastmod>2020-12-17T18:28:31-03:30</lastmod>
+    <lastmod>2020-12-28T00:00:00+00:00</lastmod>
   </url>
   
   <url>
     <loc>https://LeoUtas.github.io/tags/</loc>
-    <lastmod>2020-12-17T18:28:31-03:30</lastmod>
+    <lastmod>2020-12-28T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://LeoUtas.github.io/tag/d3.js/</loc>
+    <lastmod>2020-12-26T23:40:55-03:30</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://LeoUtas.github.io/category/d3.js/</loc>
+    <lastmod>2020-12-26T23:40:55-03:30</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://LeoUtas.github.io/projects/data-viz-in-fs-d3js/</loc>
+    <lastmod>2020-12-26T23:40:55-03:30</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://LeoUtas.github.io/projects/</loc>
+    <lastmod>2020-12-26T23:40:55-03:30</lastmod>
   </url>
   
   <url>
@@ -64,11 +74,6 @@
   
   <url>
     <loc>https://LeoUtas.github.io/category/modelling/</loc>
-    <lastmod>2020-12-17T18:13:41-03:30</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://LeoUtas.github.io/projects/</loc>
     <lastmod>2020-12-17T18:13:41-03:30</lastmod>
   </url>
   
@@ -186,14 +191,6 @@
   
   <url>
     <loc></loc>
-  </url>
-  
-  <url>
-    <loc>https://LeoUtas.github.io/post/</loc>
-  </url>
-  
-  <url>
-    <loc>https://LeoUtas.github.io/talks/</loc>
   </url>
   
   <url>

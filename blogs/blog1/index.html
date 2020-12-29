@@ -1,0 +1,1248 @@
+<!DOCTYPE html><html lang="en-us" >
+
+<head>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  
+  
+  
+  <meta name="generator" content="Wowchemy 5.0.0-beta.1 for Hugo">
+  
+
+  
+
+  
+  
+
+  
+  
+  
+  
+  
+    
+    
+    
+  
+  
+
+  <meta name="author" content="Hoang Nguyen">
+
+  
+  
+  
+    
+  
+  <meta name="description" content="This post is about bar charts for fisheries data visualization using R">
+
+  
+  <link rel="alternate" hreflang="en-us" href="https://LeoUtas.github.io/blogs/blog1/">
+
+  
+
+
+
+
+
+
+
+  
+
+
+
+
+  
+  
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  
+
+  
+  
+  
+  <meta name="theme-color" content="#356FA3">
+  
+
+  
+  
+  
+  <script src="/js/mathjax-config.js"></script>
+  
+
+  
+  
+  
+  
+    
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css" integrity="sha256-FMvZuGapsJLjouA6k7Eo2lusoAX9i0ShlWFG6qt7SLc=" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.css" integrity="sha256-Vzbj7sDDS/woiFS3uNKo8eIuni59rjyNGtXfstRzStA=" crossorigin="anonymous">
+
+    
+    
+    
+      
+    
+    
+      
+      
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.2.0/styles/github-gist.min.css" crossorigin="anonymous" title="hl-light">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.2.0/styles/github-gist.min.css" crossorigin="anonymous" title="hl-dark" disabled>
+      
+    
+
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.7.1/leaflet.min.css" integrity="sha512-1xoFisiGdy9nvho8EgXuXvnpR5GAMSjFwp40gSRE3NwdUdIMIKuPa7bqoUhLD0O/5tPNhteAsE5XyyMi5reQVA==" crossorigin="anonymous">
+    
+
+    
+
+    
+    
+      
+
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/lazysizes/5.2.2/lazysizes.min.js" integrity="sha512-TmDwFLhg3UA4ZG0Eb4MIyT1O1Mb+Oww5kFG0uHqXsdbyZz9DcvYQhKpGgNkamAI6h2lGGZq2X8ftOJvF/XjTUg==" crossorigin="anonymous" async></script>
+      
+    
+      
+
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js" integrity="" crossorigin="anonymous" async></script>
+      
+    
+      
+
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+    
+
+  
+
+  
+  
+  
+    
+      
+      
+      <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Martel:wght@800&display=swap&display=swap">
+    
+  
+
+  
+  
+  
+  
+  <link rel="stylesheet" href="/css/wowchemy.min.68bf8e3319dffcfd8679aca4b44b3f6f.css">
+
+  
+
+
+
+
+
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-163580003-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+
+  function gtag() {
+      dataLayer.push(arguments);
+  }
+
+  function trackOutboundLink(url, target) {
+    gtag('event', 'click', {
+         'event_category': 'outbound',
+         'event_label': url,
+         'transport_type': 'beacon',
+         'event_callback': function () {
+           if (target !== '_blank') {
+             document.location = url;
+           }
+         }
+    });
+    console.debug("Outbound link clicked: " + url);
+  }
+
+  function onClickCallback(event) {
+    if ((event.target.tagName !== 'A') || (event.target.host === window.location.host)) {
+      return;
+    }
+    trackOutboundLink(event.target, event.target.getAttribute('target'));  
+  }
+
+  gtag('js', new Date());
+  gtag('config', 'UA-163580003-1', {});
+
+  
+  document.addEventListener('click', onClickCallback, false);
+</script>
+
+
+  
+
+  
+
+
+  
+  
+
+  
+
+  <link rel="manifest" href="/index.webmanifest">
+  <link rel="icon" type="image/png" href="/images/icon_hu16603097881c9ca2895bc33ed489de4b_16719_32x32_fill_lanczos_center_2.png">
+  <link rel="apple-touch-icon" type="image/png" href="/images/icon_hu16603097881c9ca2895bc33ed489de4b_16719_192x192_fill_lanczos_center_2.png">
+
+  <link rel="canonical" href="https://LeoUtas.github.io/blogs/blog1/">
+
+  
+  
+  
+  
+  
+  
+  
+    
+  
+  
+  <meta property="twitter:card" content="summary_large_image">
+  
+  <meta property="og:site_name" content="Hoang Nguyen">
+  <meta property="og:url" content="https://LeoUtas.github.io/blogs/blog1/">
+  <meta property="og:title" content="Bar charts in fisheries data visualization using R | Hoang Nguyen">
+  <meta property="og:description" content="This post is about bar charts for fisheries data visualization using R"><meta property="og:image" content="https://LeoUtas.github.io/blogs/blog1/featured.png">
+  <meta property="twitter:image" content="https://LeoUtas.github.io/blogs/blog1/featured.png"><meta property="og:locale" content="en-us">
+  
+    
+      <meta property="article:published_time" content="2020-12-28T00:00:00&#43;00:00">
+    
+    <meta property="article:modified_time" content="2020-12-28T00:00:00&#43;00:00">
+  
+
+  
+
+
+
+  
+
+
+  
+
+
+  
+
+
+
+
+
+  <title>Bar charts in fisheries data visualization using R | Hoang Nguyen</title>
+
+</head>
+
+
+<body id="top" data-spy="scroll" data-offset="70" data-target="#TableOfContents" class="page-wrapper  ">
+
+  
+  
+  
+  
+  
+  <script src="/js/wowchemy-init.js"></script>
+
+  <aside class="search-results" id="search">
+  <div class="container">
+    <section class="search-header">
+
+      <div class="row no-gutters justify-content-between mb-3">
+        <div class="col-6">
+          <h1>Search</h1>
+        </div>
+        <div class="col-6 col-search-close">
+          <a class="js-search" href="#"><i class="fas fa-times-circle text-muted" aria-hidden="true"></i></a>
+        </div>
+      </div>
+
+      <div id="search-box">
+        
+        <input name="q" id="search-query" placeholder="Search..." autocapitalize="off"
+        autocomplete="off" autocorrect="off" spellcheck="false" type="search" class="form-control">
+        
+      </div>
+
+    </section>
+    <section class="section-search-results">
+
+      <div id="search-hits">
+        
+      </div>
+
+    </section>
+  </div>
+</aside>
+
+
+  <div class="page-header">
+    
+<nav class="navbar navbar-light fixed-top navbar-expand-lg py-0" id="navbar-main">
+  <div class="container">
+
+    
+      <a class="navbar-brand" href="/">Hoang Nguyen</a>
+      
+      <button type="button" class="navbar-toggler" data-toggle="collapse"
+              data-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
+        <span><i class="fas fa-bars"></i></span>
+      </button>
+      
+
+    
+    <div class="collapse navbar-collapse" id="navbar">
+
+      
+      
+      <ul class="navbar-nav ml-auto">
+        
+
+        
+
+        
+        
+        
+          
+        
+
+        
+        
+        
+        
+        
+        
+
+        <li class="nav-item">
+          <a class="nav-link " href="/about"><span>About</span></a>
+        </li>
+
+        
+        
+
+        
+
+        
+        
+        
+          
+        
+
+        
+        
+        
+        
+        
+        
+
+        <li class="nav-item">
+          <a class="nav-link " href="/projects"><span>Projects</span></a>
+        </li>
+
+        
+        
+
+        
+
+        
+        
+        
+          
+        
+
+        
+        
+        
+        
+        
+        
+
+        <li class="nav-item">
+          <a class="nav-link  active" href="/blogs"><span>Blogs</span></a>
+        </li>
+
+        
+        
+
+      
+
+        
+
+        
+        <li class="nav-item">
+          <a class="nav-link js-search" href="#"><i class="fas fa-search" aria-hidden="true"></i></a>
+        </li>
+        
+
+        
+
+        
+
+      </ul>
+
+    </div>
+  </div>
+</nav>
+  </div>
+
+  <div class="page-body">
+    
+        <article class="article">
+            
+
+
+<div class="article-title">
+
+
+
+</div>
+
+
+
+
+
+  
+
+  
+  
+  
+<div class="article-container pt-3">
+  <h1>Bar charts in fisheries data visualization using R</h1>
+
+  
+
+  
+    
+
+
+<div class="article-metadata">
+
+  
+  
+
+  
+  <span class="article-date">
+    
+    
+    Dec 28, 2020
+  </span>
+  
+
+  
+
+  
+
+  
+  
+  
+  <span class="middot-divider"></span>
+  <a href="/blogs/blog1/#disqus_thread"></a>
+  
+
+  
+  
+  <span class="middot-divider"></span>
+  <span class="article-categories">
+    <i class="fas fa-tag mr-1"></i><a href="/category/data-visualization/">data visualization</a>, <a href="/category/r/">R</a></span>
+  
+
+</div>
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="btn-links mb-3">
+  
+  
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  
+    
+  
+  
+  
+  
+  
+    
+  
+  <a class="btn btn-outline-primary my-1 mr-1" href="https://www.linkedin.com/in/hoangng84/" target="_blank" rel="noopener">
+    <i class="fab fa-linkedin mr-1"></i>
+    Follow
+  </a>
+
+
+</div>
+
+
+  
+</div>
+
+
+            <div class="article-container">
+              <div class="article-style">
+                
+<script src="index_files/header-attrs/header-attrs.js"></script>
+<link href="index_files/anchor-sections/anchor-sections.css" rel="stylesheet" />
+<script src="index_files/anchor-sections/anchor-sections.js"></script>
+
+
+<div id="get-to-know-your-data" class="section level3">
+<h3>Get to know your data</h3>
+<p style="text-align: justify;">
+First thing first, it is usually required to know the data before working on it. There are many different ways to explore a data set using R. In this example, I just provide some functions that I frequently use for data exploration at work. Also, I assume that you already have some foundational knowledge about R programming. Furthermore, if you have some background in fisheries, this post would make a lot of sense.
+</p>
+<pre class="language-r"><code class="language-r"># importing data
+age.at.length &lt;- read.csv(&quot;age_length_data.csv&quot;)
+catch.at.length &lt;- read.csv(&quot;catch_length.csv&quot;)</code></pre>
+<pre class="language-r"><code class="language-r"># data exploration
+class(age.at.length)</code></pre>
+<pre><code class="language-r">## [1] &quot;data.frame&quot;</code></pre>
+<pre class="language-r"><code class="language-r">dim(age.at.length) </code></pre>
+<pre><code class="language-r">## [1] 65 13</code></pre>
+<pre class="language-r"><code class="language-r">sapply(age.at.length, class)</code></pre>
+<pre><code class="language-r">##    length     age.3     age.4     age.5     age.6     age.7     age.8     age.9
+## &quot;integer&quot; &quot;integer&quot; &quot;integer&quot; &quot;integer&quot; &quot;integer&quot; &quot;integer&quot; &quot;integer&quot; &quot;integer&quot;
+##    age.10    age.11    age.12    age.13    age.14
+## &quot;integer&quot; &quot;integer&quot; &quot;integer&quot; &quot;integer&quot; &quot;integer&quot;</code></pre>
+<p style="text-align: justify;">
+So far, I know that age.at.length contains the information of fish age and length and is a data frame consisting of 65 rows and 14 columns. Furthermore, the function sapply() tells me that all the values are integers.
+</p>
+<pre class="language-r"><code class="language-r">class(catch.at.length)</code></pre>
+<pre><code class="language-r">## [1] &quot;data.frame&quot;</code></pre>
+<pre class="language-r"><code class="language-r">dim(catch.at.length) </code></pre>
+<pre><code class="language-r">## [1] 65  2</code></pre>
+<pre class="language-r"><code class="language-r">sapply(catch.at.length, class)</code></pre>
+<pre><code class="language-r">##    Length     Count
+## &quot;integer&quot; &quot;integer&quot;</code></pre>
+<p style="text-align: justify;">
+The same technique is applied to explore the data of catch.at.length. It is a data frame of two variables: fish length and count (i.e., the number of fish) consisting of 65 records.
+</p>
+</div>
+<div id="visualization-of-catch-at-length" class="section level3">
+<h3>Visualization of catch at length</h3>
+<p style="text-align: justify;">
+At this point, I would be curious to see how many fish are measured at a particular length. For this purpose, a bar plot can be generated using an R-base function. It is noted that ggplot2 or some other packages can do this type of plotting very well, but I would prefer to use simple techniques where possible.
+</p>
+<pre class="language-r"><code class="language-r">barplot(catch.at.length$Count,names=catch.at.length$Length,
+        xlab = &quot;Length&quot;, ylab = &quot;Number of fish&quot;, main = &quot;Catch at length&quot;,
+        col = &quot;lightblue&quot;, border = NA)</code></pre>
+<img src="index_files/figure-html/unnamed-chunk-4-1.png" width="672" style="display: block; margin: auto;" />
+<center>
+Figure 1. Barplot of Catch at length
+</center>
+</div>
+<div id="visualization-of-catch-at-age" class="section level3">
+<h3>Visualization of catch at age</h3>
+<p style="text-align: justify;">
+At this stage, measurements of length at age and catch at length are available. I would be curious to see how many fish are caught at particular ages. For this purpose, catch at age data is required. The computation of generating catch at age is presented as follows.
+</p>
+<ol>
+<li>
+Compute the proportion of age at length
+</li>
+<li>
+Catch at age = proportion of age at length * catch at length
+</li>
+<li>
+Generate a bar plot for the catch at age
+</li>
+</ol>
+<p>
+R code for computing catch at age is shown bellow.
+</p>
+<pre class="language-r"><code class="language-r">library(dplyr)
+age.at.length &lt;- age.at.length %&gt;% mutate(total=apply(age.at.length[,-1],1,sum)) # create a new column for the total of catch
+age.at.length.in.proportion &lt;- age.at.length[,c(2:14)]/age.at.length$total # compute the proportion of age at length
+catch.at.age &lt;- age.at.length.in.proportion*catch.at.length$Count # compute catch at age
+catch.at.age &lt;- apply(catch.at.age[,-13],2,sum, na.rm = T) # compute the total of catch for each age
+# view the catch at age data
+catch.at.age</code></pre>
+<pre><code class="language-r">##  age.3  age.4  age.5  age.6  age.7  age.8  age.9 age.10 age.11 age.12 age.13
+## 14.000 13.000 18.000 17.000 17.000 12.000 15.000 20.375 20.500 16.125 19.000
+## age.14
+## 18.000</code></pre>
+<p style="text-align: justify;">
+It is now simple to generate a bar chart for catch at age using an R-base code.
+</p>
+<pre class="language-r"><code class="language-r">barplot(catch.at.age,names=c(3:14),
+        xlab = &quot;Age&quot;, ylab = &quot;Number of fish&quot;, main = &quot;Catch at age&quot;,
+        col = &quot;lightblue&quot;, border = NA)</code></pre>
+<img src="index_files/figure-html/unnamed-chunk-6-1.png" width="672" style="display: block; margin: auto;" />
+<center>
+Figure 2. Bar plot of catch at age
+</center>
+</div>
+<div id="visualization-of-the-distribution-of-age-at-length" class="section level3">
+<h3>Visualization of the distribution of age at length</h3>
+<p style="text-align: justify;">
+At this point, I am aware that there are some fish of the same age, but their lengths are varied; also, some other fish having the same measurement of length, but their ages are different. How would the data be visualized to get a better insight into it? The code is shown below.
+</p>
+<pre class="language-r"><code class="language-r">age.at.length.in.proportion.t &lt;- t(age.at.length.in.proportion)
+colnames(age.at.length.in.proportion.t) &lt;- catch.at.length$Length
+row.names(age.at.length.in.proportion.t) &lt;- c(3:15)
+
+library(RColorBrewer)
+options(warn = -1)
+col1 &lt;- brewer.pal(nrow(age.at.length.in.proportion.t), &quot;Paired&quot;)
+barplot(age.at.length.in.proportion.t[-13,], col = col1, xlim = c(0, 88),
+        xlab = &quot;Length (unit)&quot;, ylab = &quot;Frequency&quot;, main = &quot;The distribution of age at length&quot;, border = NA)
+legend1 &lt;- legend(&quot;topright&quot;,legend = c(3:14), title = &quot;Age&quot;, fill = col1, box.col = &quot;white&quot;)</code></pre>
+<img src="index_files/figure-html/unnamed-chunk-7-1.png" width="672" style="display: block; margin: auto;" />
+<center>
+Figure 3. Bar plot of age at length distribution
+</center>
+<p><br></p>
+<p style="text-align: justify;">
+As shown in figure 3, it is clear that fish of length &gt; 116 cm is 14 years old. At the ages of 3, 4, and 5, their lengths distribute in three ranges (53-57, 65-69, and 73-79 cm), respectively. In contrast, the other age classes consist of fish with diverse length measurements.
+</p>
+</div>
+<div id="visualization-of-the-distribution-of-catch-at-age-over-time" class="section level3">
+<h3>Visualization of the distribution of catch at age over time</h3>
+<p style="text-align: justify;">
+The example presented in figure 2 is the distribution of catch at age in one year. If the catch at length is recorded for many years by commercial fishers, also length at age is available from some ageing work. It would be interesting to see how the distribution of catch at age changes over time. A new data set called “catch.at.length.ts1.csv” is used for this example.
+</p>
+<pre class="language-r"><code class="language-r"># importing the data
+catch.at.length.ts &lt;- read.csv(&quot;catch.at.length.ts1.csv&quot;)
+colnames(catch.at.length.ts) &lt;- c(&quot;length&quot;,array(1959:2016)) # re-name columns</code></pre>
+<p style="text-align: justify;">
+In figure 2 example, catch at age was computed for one year only; however, this example contains a series of years from 1959 to 2017. Therefore, the use of a for loop would make the calculation for multiple years efficient. The code is presented below.
+</p>
+<pre class="language-r"><code class="language-r">X &lt;- age.at.length.in.proportion[,-13]
+Y &lt;- catch.at.length.ts[,-1]
+
+S1 &lt;- list()
+S2 &lt;- list()
+S3 &lt;- list()
+
+for (i in 1:ncol(Y)) {
+  S1[i] &lt;- subset(Y, select = c(i))
+  S2[[i]] &lt;- X * S1[[i]]
+  S3[[i]] &lt;- apply(S2[[i]],2,sum,na.rm=T)
+}
+
+catch.at.age.ts &lt;- as.data.frame(do.call(cbind,S3))
+colnames(catch.at.age.ts) &lt;- c(1959:2016)
+row.names(catch.at.age.ts) &lt;- c(3:14)
+
+M &lt;- as.matrix(catch.at.age.ts)
+M &lt;- M%*%diag(1/apply(M,2,sum))
+colnames(M) &lt;- c(1959:2016)</code></pre>
+<p style="text-align: justify;">
+Once the required data is ready, it will be simple to plot a bar chart to examine the distribution of catch at age over multiple years.
+</p>
+<pre class="language-r"><code class="language-r"># Proportion at age
+barplot(M, col = col1, xlim = c(0, 80), main = &quot;Propotion at age&quot;,
+        xlab = &quot;Year&quot;, ylab = &quot;Frequency&quot;, border = NA)
+legend1 &lt;- legend(&quot;topright&quot;,legend = c(3:14), title = &quot;Age&quot;, fill = col1, box.col = &quot;white&quot;)</code></pre>
+<img src="index_files/figure-html/unnamed-chunk-10-1.png" width="672" style="display: block; margin: auto;" />
+<center>
+Figure 4. Bar plot of catch at age over time
+</center>
+<p><br></p>
+<p style="text-align: justify;">
+This is the end of the first post in fisheries data visualization using R. The code presented here is just one of many ways to do the visualization. I hope you enjoy it. Please feel free to hit me up with your comments or questions.
+</p>
+<p style="text-align: justify;"> Data for this post: </p>
+<ol>
+        <li><a href="age_length_data.csv" target="blank"> age at length </a></li>
+        <li><a href="catch_length.csv" target="blank"> catch at length </a></li>
+        <li><a href="catch.at.length.ts1.csv" target="blank"> catch at length for multiple years </a></li>
+</ol>
+<p><br><br><br></p>
+</div>
+
+<!-- back to top button  -->
+<script src="https://unpkg.com/vanilla-back-to-top@7.2.1/dist/vanilla-back-to-top.min.js"></script>
+<script>addBackToTop({
+  diameter: 80,
+  backgroundColor: '#5D7C96',
+  textColor: '#fff'
+})</script>
+
+
+              </div>
+              
+
+
+
+
+
+
+<div class="article-tags">
+  
+  <a class="badge badge-light" href="/tag/data-visualization/">data visualization</a>
+  
+  <a class="badge badge-light" href="/tag/r/">R</a>
+  
+</div>
+
+
+
+<div class="share-box" aria-hidden="true">
+  <ul class="share">
+    
+      
+      
+      
+        
+      
+      
+      
+      <li>
+        <a href="https://twitter.com/intent/tweet?url=https://LeoUtas.github.io/blogs/blog1/&amp;text=Bar%20charts%20in%20fisheries%20data%20visualization%20using%20R" target="_blank" rel="noopener" class="share-btn-twitter">
+          <i class="fab fa-twitter"></i>
+        </a>
+      </li>
+    
+      
+      
+      
+        
+      
+      
+      
+      <li>
+        <a href="https://www.facebook.com/sharer.php?u=https://LeoUtas.github.io/blogs/blog1/&amp;t=Bar%20charts%20in%20fisheries%20data%20visualization%20using%20R" target="_blank" rel="noopener" class="share-btn-facebook">
+          <i class="fab fa-facebook"></i>
+        </a>
+      </li>
+    
+      
+      
+      
+        
+      
+      
+      
+      <li>
+        <a href="mailto:?subject=Bar%20charts%20in%20fisheries%20data%20visualization%20using%20R&amp;body=https://LeoUtas.github.io/blogs/blog1/" target="_blank" rel="noopener" class="share-btn-email">
+          <i class="fas fa-envelope"></i>
+        </a>
+      </li>
+    
+      
+      
+      
+        
+      
+      
+      
+      <li>
+        <a href="https://www.linkedin.com/shareArticle?url=https://LeoUtas.github.io/blogs/blog1/&amp;title=Bar%20charts%20in%20fisheries%20data%20visualization%20using%20R" target="_blank" rel="noopener" class="share-btn-linkedin">
+          <i class="fab fa-linkedin-in"></i>
+        </a>
+      </li>
+    
+  </ul>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+
+
+
+  
+  
+  
+    
+  
+  
+  
+  <div class="media author-card content-widget-hr">
+    
+      
+      <a href="https://LeoUtas.github.io/"><img class="avatar mr-3 avatar-square" src="/authors/admin/avatar_hude99500feae8cd37355eb1a708ce03ac_302278_270x270_fill_lanczos_center_2.png" alt="Hoang Nguyen"></a>
+    
+
+    <div class="media-body">
+      <h5 class="card-title"><a href="https://LeoUtas.github.io/">Hoang Nguyen</a></h5>
+      <h6 class="card-subtitle">PhD student at Marine Institute - Memorial University of Newfoundland</h6>
+      
+      <ul class="network-icon" aria-hidden="true">
+  
+    
+    
+    
+      
+    
+    
+    
+    
+    
+      
+    
+    <li>
+      <a href="/files/HOANG.Resume.2020.pdf" >
+        <i class="fas fa-file"></i>
+      </a>
+    </li>
+  
+    
+    
+    
+      
+    
+    
+    
+    
+    
+      
+    
+    <li>
+      <a href="https://www.linkedin.com/in/hoangng84/" target="_blank" rel="noopener">
+        <i class="fab fa-linkedin-in"></i>
+      </a>
+    </li>
+  
+    
+    
+    
+      
+    
+    
+    
+    
+    
+    <li>
+      <a href="mailto:hoang.nguyenthe@mi.mun.ca" >
+        <i class="fas fa-at"></i>
+      </a>
+    </li>
+  
+    
+    
+    
+      
+    
+    
+    
+    
+    
+      
+    
+    <li>
+      <a href="https://www.facebook.com/hoangnguyenvietnam" target="_blank" rel="noopener">
+        <i class="fab fa-facebook"></i>
+      </a>
+    </li>
+  
+    
+    
+    
+      
+    
+    
+    
+    
+    
+      
+    
+    <li>
+      <a href="https://github.com/LeoUtas" target="_blank" rel="noopener">
+        <i class="fab fa-github"></i>
+      </a>
+    </li>
+  
+</ul>
+
+    </div>
+  </div>
+
+
+
+
+
+
+
+
+
+<section id="comments">
+  
+    
+<div id="disqus_thread"></div>
+<script>
+  var disqus_config = function () {
+    
+    
+    
+  };
+  (function() {
+    if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+      document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+      return;
+    }
+    var d = document, s = d.createElement('script'); s.async = true;
+    s.src = 'https://' + "HoangNg" + '.disqus.com/embed.js';
+    s.setAttribute('data-timestamp', +new Date());
+    (d.head || d.body).appendChild(s);
+  })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+
+
+  
+</section>
+
+
+
+
+
+
+
+
+
+
+
+            </div>
+        </article>
+  
+  </div>
+
+  <div class="page-footer">
+    
+    
+    <div class="container">
+      <footer class="site-footer">
+  
+
+  <p class="powered-by">
+    © Hoang Nguyen, 2020; 
+
+    made with &ensp;<a href="https://github.com/LeoUtas" target="_blank" rel="noopener"><i class="fas fa-code-branch"></i></a><a href="https://github.com/rstudio/blogdown" target="_blank" rel="noopener"></a>, &ensp;<a href="https://cran.r-project.org/" target="_blank" rel="noopener"><i class="fab fa-r-project"></i> </a><a href="https://github.com/rstudio/blogdown" target="_blank" rel="noopener">blogdown</a> package,
+    <a href="https://sourcethemes.com/academic/" target="_blank" rel="noopener">Academic theme</a> for
+    <a href="https://gohugo.io" target="_blank" rel="noopener">Hugo</a>, and <a href="https://www.microsoft.com/en-us/store/collections/windowsthemes" target="_blank" rel="noopener">Microsoft themes</a>.
+
+    
+    <span class="float-right" aria-hidden="true">
+      <a href="#" class="back-to-top">
+        <span class="button_icon">
+          <i class="fas fa-chevron-up fa-2x"></i>
+        </span>
+      </a>
+    </span>
+    
+  </p>
+</footer>
+
+    </div>
+    
+  </div>
+
+  
+<div id="modal" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Cite</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <pre><code class="tex hljs"></code></pre>
+      </div>
+      <div class="modal-footer">
+        <a class="btn btn-outline-primary my-1 js-copy-cite" href="#" target="_blank">
+          <i class="fas fa-copy"></i> Copy
+        </a>
+        <a class="btn btn-outline-primary my-1 js-download-cite" href="#" target="_blank">
+          <i class="fas fa-download"></i> Download
+        </a>
+        <div id="modal-error"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+      
+
+    
+    
+    
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
+
+      
+      
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.imagesloaded/4.1.4/imagesloaded.pkgd.min.js" integrity="sha256-lqvxZrPLtfffUl2G/e7szqSvPBILGbwmsGE1MKlOi0Q=" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.isotope/3.0.6/isotope.pkgd.min.js" integrity="sha256-CBrpuqrMhXwcLLUd5tvQ4euBHCdh7wGlDfNz8vbu/iI=" crossorigin="anonymous"></script>
+      
+
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.js" integrity="sha256-yt2kYMy0w8AbtF89WXb2P1rfjcP/HTHLT7097U8Y5b8=" crossorigin="anonymous"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/instant.page/5.1.0/instantpage.min.js" integrity="sha512-1+qUtKoh9XZW7j+6LhRMAyOrgSQKenQ4mluTR+cvxXjP1Z54RxZuzstR/H9kgPXQsVB8IW7DMDFUJpzLjvhGSQ==" crossorigin="anonymous"></script>
+
+      
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/mermaid/8.8.0/mermaid.min.js" integrity="sha512-ja+hSBi4JDtjSqc4LTBsSwuBT3tdZ3oKYKd07lTVYmCnTCor56AnRql00ssqnTOR9Ss4gOP/ROGB3SfcJnZkeg==" crossorigin="anonymous" title="mermaid"></script>
+      
+
+      
+        
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.2.0/highlight.min.js" integrity="sha512-TDKKr+IvoqZnPzc3l35hdjpHD0m+b2EC2SrLEgKDRWpxf2rFCxemkgvJ5kfU48ip+Y+m2XVKyOCD85ybtlZDmw==" crossorigin="anonymous"></script>
+        
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.2.0/languages/r.min.js"></script>
+        
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.2.0/languages/css.min.js"></script>
+        
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.2.0/languages/bash.min.js"></script>
+        
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.2.0/languages/javascript.min.js"></script>
+        
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.2.0/languages/markdown.min.js"></script>
+        
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.2.0/languages/python.min.js"></script>
+        
+      
+
+    
+
+    
+    
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.7.1/leaflet.min.js" integrity="sha512-SeiQaaDh73yrb56sTW/RgVdi/mMqNeM2oBwubFHagc5BkixSpP1fvqF47mKzPGWYSSy4RwbBunrJBQ4Co8fRWA==" crossorigin="anonymous"></script>
+    
+
+    
+    
+    <script>const code_highlighting = true;</script>
+    
+
+    
+    
+    
+    
+    
+    
+    <script>
+      const search_config = {"indexURI":"/index.json","minLength":1,"threshold":0.3};
+      const i18n = {"no_results":"No results found","placeholder":"Search...","results":"results found"};
+      const content_type = {
+        'post': "Posts",
+        'project': "Projects",
+        'publication' : "Publications",
+        'talk' : "Talks",
+        'slides' : "Slides"
+        };
+    </script>
+    
+
+    
+    
+
+    
+    
+    <script id="search-hit-fuse-template" type="text/x-template">
+      <div class="search-hit" id="summary-{{key}}">
+      <div class="search-hit-content">
+        <div class="search-hit-name">
+          <a href="{{relpermalink}}">{{title}}</a>
+          <div class="article-metadata search-hit-type">{{type}}</div>
+          <p class="search-hit-description">{{snippet}}</p>
+        </div>
+      </div>
+      </div>
+    </script>
+    
+
+    
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/fuse.js/3.2.1/fuse.min.js" integrity="sha256-VzgmKYmhsGNNN4Ph1kMW+BjoYJM2jV5i4IlFoeZA9XI=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/jquery.mark.min.js" integrity="sha256-4HLtjeVgH0eIB3aZ9mLYF6E8oU5chNdjU6p6rrXpl9U=" crossorigin="anonymous"></script>
+    
+
+    
+    
+
+    
+    
+    
+
+    
+    
+
+    
+    
+    <script id="dsq-count-scr" src="https://HoangNg.disqus.com/count.js" async></script>
+    
+
+    
+    
+    
+    
+    
+    
+    
+    
+    
+      
+    
+    
+    
+    
+    <script src="/js/wowchemy.min.ffabb05383f1b16d83e7181a605e644c.js"></script>
+
+    
+
+
+
+
+
+
+</body>
+</html>

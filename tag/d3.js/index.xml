@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>D3.js | Hoang Nguyen</title>
+    <link>https://LeoUtas.github.io/tag/d3.js/</link>
+      <atom:link href="https://LeoUtas.github.io/tag/d3.js/index.xml" rel="self" type="application/rss+xml" />
+    <description>D3.js</description>
+    <generator>Wowchemy (https://wowchemy.com)</generator><language>en-us</language><copyright>© Hoang Nguyen, 2020</copyright><lastBuildDate>Sat, 26 Dec 2020 23:40:55 -0330</lastBuildDate>
+    <image>
+      <url>https://LeoUtas.github.io/media/social.png</url>
+      <title>D3.js</title>
+      <link>https://LeoUtas.github.io/tag/d3.js/</link>
+    </image>
+    
+    <item>
+      <title>Data visualization in fisheries science using D3.js</title>
+      <link>https://LeoUtas.github.io/projects/data-viz-in-fs-d3js/</link>
+      <pubDate>Sat, 26 Dec 2020 23:40:55 -0330</pubDate>
+      <guid>https://LeoUtas.github.io/projects/data-viz-in-fs-d3js/</guid>
+      <description>&lt;p style=&#34;text-align: justify&#34;&gt;This is a collection of fisheries visualization examples using D3.js, inspired by the work of &lt;a href = &#34;https://scholar.google.ca/citations?user=e_VIsbsAAAAJ&amp;hl=en&#34; target = &#34;blank&#34;&gt; Dr. Noel Cadigan &lt;/a&gt;, &lt;a href = &#34;https://scholar.google.ca/citations?user=u4D9FmgAAAAJ&amp;hl=en&#34; target = &#34;blank&#34;&gt; Dr. Jin Gao &lt;/a&gt;, and &lt;a href = &#34;https://www.researchgate.net/profile/Malcolm_Haddon&#34; target = &#34;blank&#34;&gt; Dr. Malcolm Haddon. &lt;/a&gt; &lt;/p&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>
