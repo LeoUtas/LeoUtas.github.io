@@ -3,6 +3,11 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>https://LeoUtas.github.io/blogs/blog2/</loc>
+    <lastmod>2020-12-28T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://LeoUtas.github.io/blogs/blog1/</loc>
     <lastmod>2020-12-28T00:00:00+00:00</lastmod>
   </url>
@@ -18,6 +23,16 @@
   </url>
   
   <url>
+    <loc>https://LeoUtas.github.io/tag/d3.js/</loc>
+    <lastmod>2020-12-28T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://LeoUtas.github.io/category/d3.js/</loc>
+    <lastmod>2020-12-28T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://LeoUtas.github.io/tag/data-visualization/</loc>
     <lastmod>2020-12-28T00:00:00+00:00</lastmod>
   </url>
@@ -28,7 +43,27 @@
   </url>
   
   <url>
+    <loc>https://LeoUtas.github.io/projects/data-viz-in-fs/</loc>
+    <lastmod>2020-12-28T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://LeoUtas.github.io/</loc>
+    <lastmod>2020-12-28T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://LeoUtas.github.io/projects/</loc>
+    <lastmod>2020-12-28T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://LeoUtas.github.io/tag/python/</loc>
+    <lastmod>2020-12-28T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://LeoUtas.github.io/category/python/</loc>
     <lastmod>2020-12-28T00:00:00+00:00</lastmod>
   </url>
   
@@ -48,26 +83,6 @@
   </url>
   
   <url>
-    <loc>https://LeoUtas.github.io/tag/d3.js/</loc>
-    <lastmod>2020-12-26T23:40:55-03:30</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://LeoUtas.github.io/category/d3.js/</loc>
-    <lastmod>2020-12-26T23:40:55-03:30</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://LeoUtas.github.io/projects/data-viz-in-fs-d3js/</loc>
-    <lastmod>2020-12-26T23:40:55-03:30</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://LeoUtas.github.io/projects/</loc>
-    <lastmod>2020-12-26T23:40:55-03:30</lastmod>
-  </url>
-  
-  <url>
     <loc>https://LeoUtas.github.io/tag/modelling/</loc>
     <lastmod>2020-12-17T18:13:41-03:30</lastmod>
   </url>
@@ -78,28 +93,8 @@
   </url>
   
   <url>
-    <loc>https://LeoUtas.github.io/projects/modelling-in-fs-r/</loc>
+    <loc>https://LeoUtas.github.io/projects/modelling-in-fs/</loc>
     <lastmod>2020-12-17T18:13:41-03:30</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://LeoUtas.github.io/projects/data-viz-in-fs-r/</loc>
-    <lastmod>2020-12-17T18:08:45-03:30</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://LeoUtas.github.io/projects/data-viz-in-fs-python/</loc>
-    <lastmod>2020-12-17T18:08:38-03:30</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://LeoUtas.github.io/tag/python/</loc>
-    <lastmod>2020-12-17T18:08:38-03:30</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://LeoUtas.github.io/category/python/</loc>
-    <lastmod>2020-12-17T18:08:38-03:30</lastmod>
   </url>
   
   <url>

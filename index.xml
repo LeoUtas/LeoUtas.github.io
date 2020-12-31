@@ -13,6 +13,154 @@
     </image>
     
     <item>
+      <title>Bar charts in fisheries data visualization using python</title>
+      <link>https://LeoUtas.github.io/blogs/blog2/</link>
+      <pubDate>Mon, 28 Dec 2020 00:00:00 +0000</pubDate>
+      <guid>https://LeoUtas.github.io/blogs/blog2/</guid>
+      <description>&lt;p style=&#34;text-align: justify;&#34;&gt;
+This example is a python version of a post titled &#34;bar charts in visualizing fisheries data with R&#34;. The purpose of doing this post is that it would be interesting to develop my skills in more than one language. Therefore, if you don&#39;t mind, please look at &lt;a href=&#34;\blogs\blog1\index.html&#34; target =&#34;blank&#34;&gt; this R version &lt;/a&gt; to get the conceptional idea of plotting before jumping into the python syntax. So far, I feel that what I can do with R can also do with python, but the python code requires some switching thinking process. &lt;/p&gt;
+&lt;pre class=&#34;language-python&#34;&gt;&lt;code class=&#34;language-python&#34;&gt;
+# importing useful libraries
+import matplotlib.pyplot as plt
+import pandas as pd
+import numpy as np
+&lt;/code&gt;&lt;/pre&gt;
+&lt;br&gt;
+&lt;h3 id=&#34;data-exploration&#34;&gt;Data exploration&lt;/h3&gt;
+&lt;br&gt;
+&lt;pre class=&#34;language-python&#34;&gt;&lt;code class=&#34;language-python&#34;&gt;
+# importing data
+age_at_length = pd.read_csv(&#34;age_length_data.csv&#34;)
+catch_at_length = pd.read_csv(&#34;catch_length.csv&#34;)
+# data exploration
+print(type(age_at_length))
+print(age_at_length.shape)
+print(age_at_length.dtypes)
+&lt;p&gt;print(type(catch_at_length))
+print(catch_at_length.shape)
+print(catch_at_length.dtypes)
+&lt;/code&gt;&lt;/pre&gt;&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;&amp;lt;class &#39;pandas.core.frame.DataFrame&#39;&amp;gt;
+(65, 13)
+length    int64
+age.3     int64
+age.4     int64
+age.5     int64
+age.6     int64
+age.7     int64
+age.8     int64
+age.9     int64
+age.10    int64
+age.11    int64
+age.12    int64
+age.13    int64
+age.14    int64
+dtype: object
+&amp;lt;class &#39;pandas.core.frame.DataFrame&#39;&amp;gt;
+(65, 2)
+Length    int64
+Count     int64
+dtype: object
+&lt;/code&gt;&lt;/pre&gt;
+&lt;br&gt;
+&lt;h3 id=&#34;visualization-of-catch-at-length&#34;&gt;Visualization of catch at length&lt;/h3&gt;
+&lt;br&gt;
+&lt;pre class=&#34;language-python&#34;&gt;&lt;code class=&#34;language-python&#34;&gt;
+plt.bar(catch_at_length.Length,catch_at_length.Count, color = &#34;lightblue&#34;)
+plt.xlabel(&#34;length&#34;)
+plt.ylabel(&#34;Number of fish&#34;)
+plt.show()
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;img src=&#34;./index_6_0.svg&#34; alt=&#34;svg&#34;&gt;&lt;/p&gt;
+&lt;center&gt;Figure 1. Barplot of Catch at length&lt;/center&gt;
+&lt;br&gt;
+&lt;h3 id=&#34;visualization-of-catch-at-age&#34;&gt;Visualization of catch at age&lt;/h3&gt;
+&lt;br&gt;
+&lt;pre class=&#34;language-python&#34;&gt;&lt;code class=&#34;language-python&#34;&gt;
+age_at_length_select = age_at_length.drop([&#34;length&#34;], axis=1)
+age_at_length[&#34;total&#34;] = age_at_length_select.sum(axis=1)
+age_at_length_proportion = age_at_length_select.div(age_at_length.total, axis = 0)
+catch_at_age = age_at_length_proportion.mul(catch_at_length.Count, axis = 0)
+catch_at_age_sum = catch_at_age.sum(axis = 0)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre class=&#34;language-python&#34;&gt;&lt;code class=&#34;language-python&#34;&gt;
+plt.bar(pd.Series(np.arange(3,15,1)),catch_at_age_sum, color = &#34;lightblue&#34;)
+plt.xlabel(&#34;Age&#34;)
+plt.ylabel(&#34;Number of fish&#34;)
+plt.show()
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;img src=&#34;./index_10_0.svg&#34; alt=&#34;svg&#34;&gt;&lt;/p&gt;
+&lt;center&gt; Figure 2. Bar plot of catch at age &lt;/center&gt;
+&lt;br&gt;
+&lt;h3 id=&#34;visualization-of-the-distribution-of-age-at-length&#34;&gt;Visualization of the distribution of age at length&lt;/h3&gt;
+&lt;br&gt;
+&lt;pre class=&#34;language-python&#34;&gt;&lt;code class=&#34;language-python&#34;&gt;
+age_at_length_plot = age_at_length_proportion.plot(kind=&#34;bar&#34;, stacked = True, width = .8)
+age_at_length_plot.set_xticklabels(np.arange(53,118,1), rotation = 0)
+age_at_length_plot.xaxis.set_major_locator(plt.MaxNLocator(10))
+plt.legend(bbox_to_anchor = (1.25,1), loc = &#34;upper right&#34;)
+plt.xlabel(&#34;Length&#34;)
+plt.ylabel(&#34;Frequency&#34;)
+plt.show()
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;img src=&#34;./index_13_0.svg&#34; alt=&#34;svg&#34;&gt;&lt;/p&gt;
+&lt;center&gt; Figure 3. Bar plot of age at length distribution &lt;/center&gt;
+&lt;pre class=&#34;language-python&#34;&gt;&lt;code class=&#34;language-python&#34;&gt;
+catch_at_length_ts = pd.read_csv(&#34;catch.at.length.ts1.csv&#34;)
+catch_at_length_ts_select = catch_at_length_ts.drop([&#34;length&#34;], axis = 1)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre class=&#34;language-python&#34;&gt;&lt;code class=&#34;language-python&#34;&gt;
+S1 = {}
+S2 = {}
+S3 = {}
+S4 = {}
+
+X = age_at_length_proportion
+Y = catch_at_length_ts_select
+
+for i in range(0, len(Y.columns)):
+    S1[i] = Y[Y.columns[i]]
+    S2[i] = X.mul(S1[i], axis = 0)
+    S3[i] = S2[i].apply(np.sum, axis = 0)
+    S4[i] = S3[i].div(S3[i].sum(axis = 0))
+
+col_name2 = np.arange(1959,2017,1)
+catch_at_age = pd.DataFrame(S4)
+catch_at_age = catch_at_age.set_axis(col_name2, axis = 1, inplace = False)
+catch_at_age_t = catch_at_age.T
+&lt;/code&gt;&lt;/pre&gt;
+&lt;br&gt;
+&lt;h3 id=&#34;visualization-of-the-distribution-of-catch-at-age-over-time&#34;&gt;Visualization of the distribution of catch at age over time&lt;/h3&gt;
+&lt;br&gt;
+&lt;pre class=&#34;language-python&#34;&gt;&lt;code class=&#34;language-python&#34;&gt;
+catch_at_age_plot = catch_at_age_t.plot(kind = &#34;bar&#34;, stacked = True, width = .8)
+catch_at_age_plot.set_xticklabels(np.arange(1959,2017,1), rotation = 0)
+catch_at_age_plot.xaxis.set_major_locator(plt.MaxNLocator(12))
+plt.legend(bbox_to_anchor = (1.25,1), loc = &#34;upper right&#34;)
+plt.xlabel(&#34;Year&#34;)
+plt.ylabel(&#34;Frequency&#34;)
+plt.show()
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;img src=&#34;./index_18_0.svg&#34; alt=&#34;svg&#34;&gt;&lt;/p&gt;
+&lt;center&gt; Figure 4. Bar plot of catch at age over time &lt;/center&gt;
+&lt;p&gt;Data for this post:&lt;/p&gt;
+&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;a href=&#34;age_length_data.csv&#34;&gt; age at length &lt;/a&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;a href=&#34;catch_length.csv&#34;&gt; catch at length &lt;/a&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;a href=&#34;catch.at.length.ts1.csv&#34;&gt; catch at length for multiple years &lt;/a&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
       <title>Bar charts in fisheries data visualization using R</title>
       <link>https://LeoUtas.github.io/blogs/blog1/</link>
       <pubDate>Mon, 28 Dec 2020 00:00:00 +0000</pubDate>
@@ -23,33 +171,33 @@
 &lt;script src=&#34;index_files/anchor-sections/anchor-sections.js&#34;&gt;&lt;/script&gt;
 
 
-&lt;div id=&#34;get-to-know-your-data&#34; class=&#34;section level3&#34;&gt;
-&lt;h3&gt;Get to know your data&lt;/h3&gt;
+&lt;div id=&#34;data-exploration&#34; class=&#34;section level3&#34;&gt;
+&lt;h3&gt;Data exploration&lt;/h3&gt;
 &lt;p style=&#34;text-align: justify;&#34;&gt;
 First thing first, it is usually required to know the data before working on it. There are many different ways to explore a data set using R. In this example, I just provide some functions that I frequently use for data exploration at work. Also, I assume that you already have some foundational knowledge about R programming. Furthermore, if you have some background in fisheries, this post would make a lot of sense.
 &lt;/p&gt;
-&lt;pre class=&#34;language-r&#34;&gt;&lt;code class=&#34;language-r&#34;&gt;# importing data
+&lt;pre class=&#34;language-r&#34;&gt;&lt;code class = &#34;language-r&#34;&gt;# importing data
 age.at.length &amp;lt;- read.csv(&amp;quot;age_length_data.csv&amp;quot;)
 catch.at.length &amp;lt;- read.csv(&amp;quot;catch_length.csv&amp;quot;)&lt;/code&gt;&lt;/pre&gt;
-&lt;pre class=&#34;language-r&#34;&gt;&lt;code class=&#34;language-r&#34;&gt;# data exploration
+&lt;pre class=&#34;language-r&#34;&gt;&lt;code class = &#34;language-r&#34;&gt;# data exploration
 class(age.at.length)&lt;/code&gt;&lt;/pre&gt;
-&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;## [1] &amp;quot;data.frame&amp;quot;&lt;/code&gt;&lt;/pre&gt;
-&lt;pre class=&#34;language-r&#34;&gt;&lt;code class=&#34;language-r&#34;&gt;dim(age.at.length) &lt;/code&gt;&lt;/pre&gt;
-&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;## [1] 65 13&lt;/code&gt;&lt;/pre&gt;
-&lt;pre class=&#34;language-r&#34;&gt;&lt;code class=&#34;language-r&#34;&gt;sapply(age.at.length, class)&lt;/code&gt;&lt;/pre&gt;
-&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;##    length     age.3     age.4     age.5     age.6     age.7     age.8     age.9
+&lt;pre&gt;&lt;code class = &#34;language-r&#34;&gt;## [1] &amp;quot;data.frame&amp;quot;&lt;/code&gt;&lt;/pre&gt;
+&lt;pre class=&#34;language-r&#34;&gt;&lt;code class = &#34;language-r&#34;&gt;dim(age.at.length) &lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code class = &#34;language-r&#34;&gt;## [1] 65 13&lt;/code&gt;&lt;/pre&gt;
+&lt;pre class=&#34;language-r&#34;&gt;&lt;code class = &#34;language-r&#34;&gt;sapply(age.at.length, class)&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code class = &#34;language-r&#34;&gt;##    length     age.3     age.4     age.5     age.6     age.7     age.8     age.9
 ## &amp;quot;integer&amp;quot; &amp;quot;integer&amp;quot; &amp;quot;integer&amp;quot; &amp;quot;integer&amp;quot; &amp;quot;integer&amp;quot; &amp;quot;integer&amp;quot; &amp;quot;integer&amp;quot; &amp;quot;integer&amp;quot;
 ##    age.10    age.11    age.12    age.13    age.14
 ## &amp;quot;integer&amp;quot; &amp;quot;integer&amp;quot; &amp;quot;integer&amp;quot; &amp;quot;integer&amp;quot; &amp;quot;integer&amp;quot;&lt;/code&gt;&lt;/pre&gt;
 &lt;p style=&#34;text-align: justify;&#34;&gt;
 So far, I know that age.at.length contains the information of fish age and length and is a data frame consisting of 65 rows and 14 columns. Furthermore, the function sapply() tells me that all the values are integers.
 &lt;/p&gt;
-&lt;pre class=&#34;language-r&#34;&gt;&lt;code class=&#34;language-r&#34;&gt;class(catch.at.length)&lt;/code&gt;&lt;/pre&gt;
-&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;## [1] &amp;quot;data.frame&amp;quot;&lt;/code&gt;&lt;/pre&gt;
-&lt;pre class=&#34;language-r&#34;&gt;&lt;code class=&#34;language-r&#34;&gt;dim(catch.at.length) &lt;/code&gt;&lt;/pre&gt;
-&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;## [1] 65  2&lt;/code&gt;&lt;/pre&gt;
-&lt;pre class=&#34;language-r&#34;&gt;&lt;code class=&#34;language-r&#34;&gt;sapply(catch.at.length, class)&lt;/code&gt;&lt;/pre&gt;
-&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;##    Length     Count
+&lt;pre class=&#34;language-r&#34;&gt;&lt;code class = &#34;language-r&#34;&gt;class(catch.at.length)&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code class = &#34;language-r&#34;&gt;## [1] &amp;quot;data.frame&amp;quot;&lt;/code&gt;&lt;/pre&gt;
+&lt;pre class=&#34;language-r&#34;&gt;&lt;code class = &#34;language-r&#34;&gt;dim(catch.at.length) &lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code class = &#34;language-r&#34;&gt;## [1] 65  2&lt;/code&gt;&lt;/pre&gt;
+&lt;pre class=&#34;language-r&#34;&gt;&lt;code class = &#34;language-r&#34;&gt;sapply(catch.at.length, class)&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code class = &#34;language-r&#34;&gt;##    Length     Count
 ## &amp;quot;integer&amp;quot; &amp;quot;integer&amp;quot;&lt;/code&gt;&lt;/pre&gt;
 &lt;p style=&#34;text-align: justify;&#34;&gt;
 The same technique is applied to explore the data of catch.at.length. It is a data frame of two variables: fish length and count (i.e., the number of fish) consisting of 65 records.
@@ -60,8 +208,8 @@ The same technique is applied to explore the data of catch.at.length. It is a da
 &lt;p style=&#34;text-align: justify;&#34;&gt;
 At this point, I would be curious to see how many fish are measured at a particular length. For this purpose, a bar plot can be generated using an R-base function. It is noted that ggplot2 or some other packages can do this type of plotting very well, but I would prefer to use simple techniques where possible.
 &lt;/p&gt;
-&lt;pre class=&#34;language-r&#34;&gt;&lt;code class=&#34;language-r&#34;&gt;barplot(catch.at.length$Count,names=catch.at.length$Length,
-        xlab = &amp;quot;Length&amp;quot;, ylab = &amp;quot;Number of fish&amp;quot;, main = &amp;quot;Catch at length&amp;quot;,
+&lt;pre class=&#34;language-r&#34;&gt;&lt;code class = &#34;language-r&#34;&gt;barplot(catch.at.length$Count,names=catch.at.length$Length,
+        xlab = &amp;quot;Length&amp;quot;, ylab = &amp;quot;Number of fish&amp;quot;,
         col = &amp;quot;lightblue&amp;quot;, border = NA)&lt;/code&gt;&lt;/pre&gt;
 &lt;img src=&#34;index_files/figure-html/unnamed-chunk-4-1.png&#34; width=&#34;672&#34; style=&#34;display: block; margin: auto;&#34; /&gt;
 &lt;center&gt;
@@ -87,22 +235,22 @@ Generate a bar plot for the catch at age
 &lt;p&gt;
 R code for computing catch at age is shown bellow.
 &lt;/p&gt;
-&lt;pre class=&#34;language-r&#34;&gt;&lt;code class=&#34;language-r&#34;&gt;library(dplyr)
+&lt;pre class=&#34;language-r&#34;&gt;&lt;code class = &#34;language-r&#34;&gt;library(dplyr)
 age.at.length &amp;lt;- age.at.length %&amp;gt;% mutate(total=apply(age.at.length[,-1],1,sum)) # create a new column for the total of catch
 age.at.length.in.proportion &amp;lt;- age.at.length[,c(2:14)]/age.at.length$total # compute the proportion of age at length
 catch.at.age &amp;lt;- age.at.length.in.proportion*catch.at.length$Count # compute catch at age
 catch.at.age &amp;lt;- apply(catch.at.age[,-13],2,sum, na.rm = T) # compute the total of catch for each age
 # view the catch at age data
 catch.at.age&lt;/code&gt;&lt;/pre&gt;
-&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;##  age.3  age.4  age.5  age.6  age.7  age.8  age.9 age.10 age.11 age.12 age.13
+&lt;pre&gt;&lt;code class = &#34;language-r&#34;&gt;##  age.3  age.4  age.5  age.6  age.7  age.8  age.9 age.10 age.11 age.12 age.13
 ## 14.000 13.000 18.000 17.000 17.000 12.000 15.000 20.375 20.500 16.125 19.000
 ## age.14
 ## 18.000&lt;/code&gt;&lt;/pre&gt;
 &lt;p style=&#34;text-align: justify;&#34;&gt;
 It is now simple to generate a bar chart for catch at age using an R-base code.
 &lt;/p&gt;
-&lt;pre class=&#34;language-r&#34;&gt;&lt;code class=&#34;language-r&#34;&gt;barplot(catch.at.age,names=c(3:14),
-        xlab = &amp;quot;Age&amp;quot;, ylab = &amp;quot;Number of fish&amp;quot;, main = &amp;quot;Catch at age&amp;quot;,
+&lt;pre class=&#34;language-r&#34;&gt;&lt;code class = &#34;language-r&#34;&gt;barplot(catch.at.age,names=c(3:14),
+        xlab = &amp;quot;Age&amp;quot;, ylab = &amp;quot;Number of fish&amp;quot;,
         col = &amp;quot;lightblue&amp;quot;, border = NA)&lt;/code&gt;&lt;/pre&gt;
 &lt;img src=&#34;index_files/figure-html/unnamed-chunk-6-1.png&#34; width=&#34;672&#34; style=&#34;display: block; margin: auto;&#34; /&gt;
 &lt;center&gt;
@@ -114,7 +262,7 @@ Figure 2. Bar plot of catch at age
 &lt;p style=&#34;text-align: justify;&#34;&gt;
 At this point, I am aware that there are some fish of the same age, but their lengths are varied; also, some other fish having the same measurement of length, but their ages are different. How would the data be visualized to get a better insight into it? The code is shown below.
 &lt;/p&gt;
-&lt;pre class=&#34;language-r&#34;&gt;&lt;code class=&#34;language-r&#34;&gt;age.at.length.in.proportion.t &amp;lt;- t(age.at.length.in.proportion)
+&lt;pre class=&#34;language-r&#34;&gt;&lt;code class = &#34;language-r&#34;&gt;age.at.length.in.proportion.t &amp;lt;- t(age.at.length.in.proportion)
 colnames(age.at.length.in.proportion.t) &amp;lt;- catch.at.length$Length
 row.names(age.at.length.in.proportion.t) &amp;lt;- c(3:15)
 
@@ -122,7 +270,7 @@ library(RColorBrewer)
 options(warn = -1)
 col1 &amp;lt;- brewer.pal(nrow(age.at.length.in.proportion.t), &amp;quot;Paired&amp;quot;)
 barplot(age.at.length.in.proportion.t[-13,], col = col1, xlim = c(0, 88),
-        xlab = &amp;quot;Length (unit)&amp;quot;, ylab = &amp;quot;Frequency&amp;quot;, main = &amp;quot;The distribution of age at length&amp;quot;, border = NA)
+        xlab = &amp;quot;Length (unit)&amp;quot;, ylab = &amp;quot;Frequency&amp;quot;, border = NA)
 legend1 &amp;lt;- legend(&amp;quot;topright&amp;quot;,legend = c(3:14), title = &amp;quot;Age&amp;quot;, fill = col1, box.col = &amp;quot;white&amp;quot;)&lt;/code&gt;&lt;/pre&gt;
 &lt;img src=&#34;index_files/figure-html/unnamed-chunk-7-1.png&#34; width=&#34;672&#34; style=&#34;display: block; margin: auto;&#34; /&gt;
 &lt;center&gt;
@@ -138,13 +286,13 @@ As shown in figure 3, it is clear that fish of length &amp;gt; 116 cm is 14 year
 &lt;p style=&#34;text-align: justify;&#34;&gt;
 The example presented in figure 2 is the distribution of catch at age in one year. If the catch at length is recorded for many years by commercial fishers, also length at age is available from some ageing work. It would be interesting to see how the distribution of catch at age changes over time. A new data set called “catch.at.length.ts1.csv” is used for this example.
 &lt;/p&gt;
-&lt;pre class=&#34;language-r&#34;&gt;&lt;code class=&#34;language-r&#34;&gt;# importing the data
+&lt;pre class=&#34;language-r&#34;&gt;&lt;code class = &#34;language-r&#34;&gt;# importing the data
 catch.at.length.ts &amp;lt;- read.csv(&amp;quot;catch.at.length.ts1.csv&amp;quot;)
 colnames(catch.at.length.ts) &amp;lt;- c(&amp;quot;length&amp;quot;,array(1959:2016)) # re-name columns&lt;/code&gt;&lt;/pre&gt;
 &lt;p style=&#34;text-align: justify;&#34;&gt;
 In figure 2 example, catch at age was computed for one year only; however, this example contains a series of years from 1959 to 2017. Therefore, the use of a for loop would make the calculation for multiple years efficient. The code is presented below.
 &lt;/p&gt;
-&lt;pre class=&#34;language-r&#34;&gt;&lt;code class=&#34;language-r&#34;&gt;X &amp;lt;- age.at.length.in.proportion[,-13]
+&lt;pre class=&#34;language-r&#34;&gt;&lt;code class = &#34;language-r&#34;&gt;X &amp;lt;- age.at.length.in.proportion[,-13]
 Y &amp;lt;- catch.at.length.ts[,-1]
 
 S1 &amp;lt;- list()
@@ -167,8 +315,8 @@ colnames(M) &amp;lt;- c(1959:2016)&lt;/code&gt;&lt;/pre&gt;
 &lt;p style=&#34;text-align: justify;&#34;&gt;
 Once the required data is ready, it will be simple to plot a bar chart to examine the distribution of catch at age over multiple years.
 &lt;/p&gt;
-&lt;pre class=&#34;language-r&#34;&gt;&lt;code class=&#34;language-r&#34;&gt;# Proportion at age
-barplot(M, col = col1, xlim = c(0, 80), main = &amp;quot;Propotion at age&amp;quot;,
+&lt;pre class=&#34;language-r&#34;&gt;&lt;code class = &#34;language-r&#34;&gt;# Proportion at age
+barplot(M, col = col1, xlim = c(0, 80),
         xlab = &amp;quot;Year&amp;quot;, ylab = &amp;quot;Frequency&amp;quot;, border = NA)
 legend1 &amp;lt;- legend(&amp;quot;topright&amp;quot;,legend = c(3:14), title = &amp;quot;Age&amp;quot;, fill = col1, box.col = &amp;quot;white&amp;quot;)&lt;/code&gt;&lt;/pre&gt;
 &lt;img src=&#34;index_files/figure-html/unnamed-chunk-10-1.png&#34; width=&#34;672&#34; style=&#34;display: block; margin: auto;&#34; /&gt;
@@ -179,11 +327,19 @@ Figure 4. Bar plot of catch at age over time
 &lt;p style=&#34;text-align: justify;&#34;&gt;
 This is the end of the first post in fisheries data visualization using R. The code presented here is just one of many ways to do the visualization. I hope you enjoy it. Please feel free to hit me up with your comments or questions.
 &lt;/p&gt;
-&lt;p style=&#34;text-align: justify;&#34;&gt; Data for this post: &lt;/p&gt;
+&lt;p style=&#34;text-align: justify;&#34;&gt;
+Data for this post:
+&lt;/p&gt;
 &lt;ol&gt;
-        &lt;li&gt;&lt;a href=&#34;age_length_data.csv&#34; target=&#34;blank&#34;&gt; age at length &lt;/a&gt;&lt;/li&gt;
-        &lt;li&gt;&lt;a href=&#34;catch_length.csv&#34; target=&#34;blank&#34;&gt; catch at length &lt;/a&gt;&lt;/li&gt;
-        &lt;li&gt;&lt;a href=&#34;catch.at.length.ts1.csv&#34; target=&#34;blank&#34;&gt; catch at length for multiple years &lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;
+&lt;a href=&#34;age_length_data.csv&#34;&gt; age at length &lt;/a&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;a href=&#34;catch_length.csv&#34;&gt; catch at length &lt;/a&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;a href=&#34;catch.at.length.ts1.csv&#34;&gt; catch at length for multiple years &lt;/a&gt;
+&lt;/li&gt;
 &lt;/ol&gt;
 &lt;p&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;/p&gt;
 &lt;/div&gt;
@@ -200,56 +356,32 @@ This is the end of the first post in fisheries data visualization using R. The c
     </item>
     
     <item>
-      <title>Data visualization in fisheries science using D3.js</title>
-      <link>https://LeoUtas.github.io/projects/data-viz-in-fs-d3js/</link>
-      <pubDate>Sat, 26 Dec 2020 23:40:55 -0330</pubDate>
-      <guid>https://LeoUtas.github.io/projects/data-viz-in-fs-d3js/</guid>
-      <description>&lt;p style=&#34;text-align: justify&#34;&gt;This is a collection of fisheries visualization examples using D3.js, inspired by the work of &lt;a href = &#34;https://scholar.google.ca/citations?user=e_VIsbsAAAAJ&amp;hl=en&#34; target = &#34;blank&#34;&gt; Dr. Noel Cadigan &lt;/a&gt;, &lt;a href = &#34;https://scholar.google.ca/citations?user=u4D9FmgAAAAJ&amp;hl=en&#34; target = &#34;blank&#34;&gt; Dr. Jin Gao &lt;/a&gt;, and &lt;a href = &#34;https://www.researchgate.net/profile/Malcolm_Haddon&#34; target = &#34;blank&#34;&gt; Dr. Malcolm Haddon. &lt;/a&gt; &lt;/p&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>Traditional modelling in Fisheries Science using R</title>
-      <link>https://LeoUtas.github.io/projects/modelling-in-fs-r/</link>
-      <pubDate>Thu, 17 Dec 2020 18:13:41 -0330</pubDate>
-      <guid>https://LeoUtas.github.io/projects/modelling-in-fs-r/</guid>
-      <description>
-
-
-&lt;!-- Project information --&gt;
-&lt;br&gt;&lt;br&gt;&lt;br&gt;
-&lt;ul style=&#34;font-family: &#39;Courier New&#39;, Courier, monospace; font-size: .8rem;&#34;&gt;
-    &lt;li&gt; Categories: personal project &lt;/li&gt;
-    &lt;li&gt; Status: on-going &lt;/li&gt;
-    &lt;li&gt; Timeline: Dec, 2020 to Feb, 2021 &lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;!-- back to top button  --&gt;
-&lt;script src=&#34;https://unpkg.com/vanilla-back-to-top@7.2.1/dist/vanilla-back-to-top.min.js&#34;&gt;&lt;/script&gt;
-&lt;script&gt;addBackToTop({
-  diameter: 80,
-  backgroundColor: &#39;#5D7C96&#39;,
-  textColor: &#39;#fff&#39;
-})&lt;/script&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>Data visualization in fisheries science using R</title>
-      <link>https://LeoUtas.github.io/projects/data-viz-in-fs-r/</link>
-      <pubDate>Thu, 17 Dec 2020 18:08:45 -0330</pubDate>
-      <guid>https://LeoUtas.github.io/projects/data-viz-in-fs-r/</guid>
+      <title>Data visualization in fisheries science using R, python, and D3.js</title>
+      <link>https://LeoUtas.github.io/projects/data-viz-in-fs/</link>
+      <pubDate>Mon, 28 Dec 2020 00:00:00 +0000</pubDate>
+      <guid>https://LeoUtas.github.io/projects/data-viz-in-fs/</guid>
       <description>&lt;p &gt;&lt;blockquote style=&#34;text-align: center;&#34; cite = &#34;https://en.wikipedia.org/wiki/A_picture_is_worth_a_thousand_words&#34;&gt; &#34;A picture is worth a thousand words&#34; &lt;/blockquote&gt;&lt;/p&gt;
 
-&lt;p style=&#34;text-align: justify;&#34;&gt;This is a collection of fisheries visualization examples using R, inspired by the work of &lt;a href = &#34;https://scholar.google.ca/citations?user=e_VIsbsAAAAJ&amp;hl=en&#34; target = &#34;blank&#34;&gt; Dr. Noel Cadigan &lt;/a&gt;, &lt;a href = &#34;https://scholar.google.ca/citations?user=u4D9FmgAAAAJ&amp;hl=en&#34; target = &#34;blank&#34;&gt; Dr. Jin Gao &lt;/a&gt;, and &lt;a href = &#34;https://www.researchgate.net/profile/Malcolm_Haddon&#34; target = &#34;blank&#34;&gt; Dr. Malcolm Haddon. &lt;/a&gt; &lt;/p&gt;
+&lt;p style=&#34;text-align: justify;&#34;&gt;This is a collection of fisheries visualization examples using R, python, D3.js, inspired by the work of &lt;a href = &#34;https://scholar.google.ca/citations?user=e_VIsbsAAAAJ&amp;hl=en&#34; target = &#34;blank&#34;&gt; Dr. Noel Cadigan &lt;/a&gt;, &lt;a href = &#34;https://scholar.google.ca/citations?user=u4D9FmgAAAAJ&amp;hl=en&#34; target = &#34;blank&#34;&gt; Dr. Jin Gao &lt;/a&gt;, and &lt;a href = &#34;https://www.researchgate.net/profile/Malcolm_Haddon&#34; target = &#34;blank&#34;&gt; Dr. Malcolm Haddon,&lt;/a&gt;  as well as python, R, and D3.js communities worldwide. &lt;/p&gt;
 &lt;br&gt;
 
 
 &lt;div class=&#34;alert alert-note&#34;&gt;
   &lt;div&gt;
-    &lt;a href=&#34;\blogs\blog1\index.html&#34;&gt; Bar charts in fisheries data visualization &lt;/a&gt;
+    &lt;a href=&#34;\blogs\blog1\index.html&#34;&gt; Bar charts in fisheries data visualization using R &lt;/a&gt;
   &lt;/div&gt;
 &lt;/div&gt;
+
+
+&lt;br&gt;
+
+
+&lt;div class=&#34;alert alert-note&#34;&gt;
+  &lt;div&gt;
+    &lt;a href=&#34;\blogs\blog2&#34;&gt; Bar charts in fisheries data visualization using python &lt;/a&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+
 
 
 &lt;!-- Project information --&gt;
@@ -271,13 +403,16 @@ This is the end of the first post in fisheries data visualization using R. The c
     </item>
     
     <item>
-      <title>Data visualization in fisheries science using Python</title>
-      <link>https://LeoUtas.github.io/projects/data-viz-in-fs-python/</link>
-      <pubDate>Thu, 17 Dec 2020 18:08:38 -0330</pubDate>
-      <guid>https://LeoUtas.github.io/projects/data-viz-in-fs-python/</guid>
-      <description>&lt;p &gt;&lt;blockquote style=&#34;text-align: center;&#34; cite = &#34;https://en.wikipedia.org/wiki/A_picture_is_worth_a_thousand_words&#34;&gt; &#34;A picture is worth a thousand words&#34; &lt;/blockquote&gt;&lt;/p&gt;
+      <title>Modelling in fisheries science using R and python</title>
+      <link>https://LeoUtas.github.io/projects/modelling-in-fs/</link>
+      <pubDate>Thu, 17 Dec 2020 18:13:41 -0330</pubDate>
+      <guid>https://LeoUtas.github.io/projects/modelling-in-fs/</guid>
+      <description>
 
-&lt;p style=&#34;text-align: justify&#34;&gt;This is a collection of fisheries visualization examples using python, inspired by the work of &lt;a href = &#34;https://scholar.google.ca/citations?user=e_VIsbsAAAAJ&amp;hl=en&#34; target = &#34;blank&#34;&gt; Dr. Noel Cadigan &lt;/a&gt;, &lt;a href = &#34;https://scholar.google.ca/citations?user=u4D9FmgAAAAJ&amp;hl=en&#34; target = &#34;blank&#34;&gt; Dr. Jin Gao &lt;/a&gt;, and &lt;a href = &#34;https://www.researchgate.net/profile/Malcolm_Haddon&#34; target = &#34;blank&#34;&gt; Dr. Malcolm Haddon. &lt;/a&gt; &lt;/p&gt;
+&lt;p style=&#34;text-align: justify;&#34;&gt;This is a collection of fisheries modelling examples using R and python, inspired by the work of &lt;a href = &#34;https://scholar.google.ca/citations?user=e_VIsbsAAAAJ&amp;hl=en&#34; target = &#34;blank&#34;&gt; Dr. Noel Cadigan &lt;/a&gt;, &lt;a href = &#34;https://scholar.google.ca/citations?user=u4D9FmgAAAAJ&amp;hl=en&#34; target = &#34;blank&#34;&gt; Dr. Jin Gao &lt;/a&gt;, and &lt;a href = &#34;https://www.researchgate.net/profile/Malcolm_Haddon&#34; target = &#34;blank&#34;&gt; Dr. Malcolm Haddon,&lt;/a&gt;  as well as python and R communities worldwide. &lt;/p&gt;
+&lt;br&gt;
+
+
 
 
 &lt;!-- Project information --&gt;
@@ -351,11 +486,14 @@ This is the end of the first post in fisheries data visualization using R. The c
 
 &lt;p style=&#34;text-align: justify;&#34;&gt; This study, for the first time, provided evidence of using otoliths (sagittae and lapilli) in determining the daily age of &lt;em&gt; G. holbrooki &lt;/em&gt; with the opportunity of quantitively examining biological characteristics and the dynamics of a population in Tasmania, Australia; which can be used to inform pest control and eradication programs both locally and globally. &lt;/p&gt;
 
-&lt;p style=&#34;text-align: justify;&#34;&gt; For the full text of my thesis, please refer to &lt;a href = &#34;HOANG-Thesis-FINAL.pdf&#34; target = &#34;blank&#34;&gt; thesis. &lt;/a&gt;&lt;/p&gt;
-
-&lt;p style=&#34;text-align: justify;&#34;&gt; For my presentation, please refer to &lt;a href = &#34;HOANG-Presentation-FINAL.pptx&#34; target = &#34;blank&#34;&gt; presentation &lt;/a&gt; or view the slides above.&lt;/p&gt;
+&lt;p style=&#34;text-align: justify;&#34;&gt; Project deliverables: &lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href = &#34;HOANG-Thesis-FINAL.pdf&#34; target = &#34;blank&#34;&gt; Honour thesis &lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href = &#34;HOANG-Presentation-FINAL.pptx&#34; target = &#34;blank&#34;&gt; Final presentation &lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
 
 &lt;!-- Project information --&gt;
+&lt;br&gt;&lt;br&gt;&lt;br&gt;
 &lt;ul style=&#34;font-family: &#39;Courier New&#39;, Courier, monospace; font-size: .8rem;&#34;&gt;
     &lt;li&gt; Categories: honour project at &lt;a href=&#34;https://www.utas.edu.au/&#34; target=&#34;blank&#34;&gt; University of Tasmania&lt;/a&gt;, sponsored by&lt;a href=&#34;https://researchdata.edu.au/linkage-projects-grant-id-lp140100428/618634&#34; target=&#34;blank&#34;&gt; ARC linkage-projects-grant-id-lp140100428 &lt;/a&gt; &lt;/li&gt;
     &lt;li&gt; Status: closed &lt;/li&gt;

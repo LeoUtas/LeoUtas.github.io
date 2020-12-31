@@ -5,7 +5,7 @@
     <link>https://LeoUtas.github.io/category/d3.js/</link>
       <atom:link href="https://LeoUtas.github.io/category/d3.js/index.xml" rel="self" type="application/rss+xml" />
     <description>D3.js</description>
-    <generator>Wowchemy (https://wowchemy.com)</generator><language>en-us</language><copyright>© Hoang Nguyen, 2020</copyright><lastBuildDate>Sat, 26 Dec 2020 23:40:55 -0330</lastBuildDate>
+    <generator>Wowchemy (https://wowchemy.com)</generator><language>en-us</language><copyright>© Hoang Nguyen, 2020</copyright><lastBuildDate>Mon, 28 Dec 2020 00:00:00 +0000</lastBuildDate>
     <image>
       <url>https://LeoUtas.github.io/media/social.png</url>
       <title>D3.js</title>
@@ -13,11 +13,49 @@
     </image>
     
     <item>
-      <title>Data visualization in fisheries science using D3.js</title>
-      <link>https://LeoUtas.github.io/projects/data-viz-in-fs-d3js/</link>
-      <pubDate>Sat, 26 Dec 2020 23:40:55 -0330</pubDate>
-      <guid>https://LeoUtas.github.io/projects/data-viz-in-fs-d3js/</guid>
-      <description>&lt;p style=&#34;text-align: justify&#34;&gt;This is a collection of fisheries visualization examples using D3.js, inspired by the work of &lt;a href = &#34;https://scholar.google.ca/citations?user=e_VIsbsAAAAJ&amp;hl=en&#34; target = &#34;blank&#34;&gt; Dr. Noel Cadigan &lt;/a&gt;, &lt;a href = &#34;https://scholar.google.ca/citations?user=u4D9FmgAAAAJ&amp;hl=en&#34; target = &#34;blank&#34;&gt; Dr. Jin Gao &lt;/a&gt;, and &lt;a href = &#34;https://www.researchgate.net/profile/Malcolm_Haddon&#34; target = &#34;blank&#34;&gt; Dr. Malcolm Haddon. &lt;/a&gt; &lt;/p&gt;
+      <title>Data visualization in fisheries science using R, python, and D3.js</title>
+      <link>https://LeoUtas.github.io/projects/data-viz-in-fs/</link>
+      <pubDate>Mon, 28 Dec 2020 00:00:00 +0000</pubDate>
+      <guid>https://LeoUtas.github.io/projects/data-viz-in-fs/</guid>
+      <description>&lt;p &gt;&lt;blockquote style=&#34;text-align: center;&#34; cite = &#34;https://en.wikipedia.org/wiki/A_picture_is_worth_a_thousand_words&#34;&gt; &#34;A picture is worth a thousand words&#34; &lt;/blockquote&gt;&lt;/p&gt;
+
+&lt;p style=&#34;text-align: justify;&#34;&gt;This is a collection of fisheries visualization examples using R, python, D3.js, inspired by the work of &lt;a href = &#34;https://scholar.google.ca/citations?user=e_VIsbsAAAAJ&amp;hl=en&#34; target = &#34;blank&#34;&gt; Dr. Noel Cadigan &lt;/a&gt;, &lt;a href = &#34;https://scholar.google.ca/citations?user=u4D9FmgAAAAJ&amp;hl=en&#34; target = &#34;blank&#34;&gt; Dr. Jin Gao &lt;/a&gt;, and &lt;a href = &#34;https://www.researchgate.net/profile/Malcolm_Haddon&#34; target = &#34;blank&#34;&gt; Dr. Malcolm Haddon,&lt;/a&gt;  as well as python, R, and D3.js communities worldwide. &lt;/p&gt;
+&lt;br&gt;
+
+
+&lt;div class=&#34;alert alert-note&#34;&gt;
+  &lt;div&gt;
+    &lt;a href=&#34;\blogs\blog1\index.html&#34;&gt; Bar charts in fisheries data visualization using R &lt;/a&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+
+
+&lt;br&gt;
+
+
+&lt;div class=&#34;alert alert-note&#34;&gt;
+  &lt;div&gt;
+    &lt;a href=&#34;\blogs\blog2&#34;&gt; Bar charts in fisheries data visualization using python &lt;/a&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+
+
+
+&lt;!-- Project information --&gt;
+&lt;br&gt;&lt;br&gt;&lt;br&gt;
+&lt;ul style=&#34;font-family: &#39;Courier New&#39;, Courier, monospace; font-size: .8rem;&#34;&gt;
+    &lt;li&gt; Categories: personal project &lt;/li&gt;
+    &lt;li&gt; Status: on-going &lt;/li&gt;
+    &lt;li&gt; Timeline: Dec, 2020 to Feb, 2021 &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;!-- back to top button  --&gt;
+&lt;script src=&#34;https://unpkg.com/vanilla-back-to-top@7.2.1/dist/vanilla-back-to-top.min.js&#34;&gt;&lt;/script&gt;
+&lt;script&gt;addBackToTop({
+  diameter: 80,
+  backgroundColor: &#39;#5D7C96&#39;,
+  textColor: &#39;#fff&#39;
+})&lt;/script&gt;
 </description>
     </item>
     

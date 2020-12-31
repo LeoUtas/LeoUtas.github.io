@@ -34,10 +34,10 @@
   
     
   
-  <meta name="description" content="A collection of visualization examples in fisheries science using python">
+  <meta name="description" content="This post is about bar charts for fisheries data visualization using python">
 
   
-  <link rel="alternate" hreflang="en-us" href="https://LeoUtas.github.io/projects/data-viz-in-fs-python/">
+  <link rel="alternate" hreflang="en-us" href="https://LeoUtas.github.io/blogs/blog2/">
 
   
 
@@ -298,7 +298,7 @@
   <link rel="icon" type="image/png" href="/images/icon_hu16603097881c9ca2895bc33ed489de4b_16719_32x32_fill_lanczos_center_2.png">
   <link rel="apple-touch-icon" type="image/png" href="/images/icon_hu16603097881c9ca2895bc33ed489de4b_16719_192x192_fill_lanczos_center_2.png">
 
-  <link rel="canonical" href="https://LeoUtas.github.io/projects/data-viz-in-fs-python/">
+  <link rel="canonical" href="https://LeoUtas.github.io/blogs/blog2/">
 
   
   
@@ -313,15 +313,15 @@
   <meta property="twitter:card" content="summary_large_image">
   
   <meta property="og:site_name" content="Hoang Nguyen">
-  <meta property="og:url" content="https://LeoUtas.github.io/projects/data-viz-in-fs-python/">
-  <meta property="og:title" content="Data visualization in fisheries science using Python | Hoang Nguyen">
-  <meta property="og:description" content="A collection of visualization examples in fisheries science using python"><meta property="og:image" content="https://LeoUtas.github.io/media/social.png">
-  <meta property="twitter:image" content="https://LeoUtas.github.io/media/social.png"><meta property="og:locale" content="en-us">
+  <meta property="og:url" content="https://LeoUtas.github.io/blogs/blog2/">
+  <meta property="og:title" content="Bar charts in fisheries data visualization using python | Hoang Nguyen">
+  <meta property="og:description" content="This post is about bar charts for fisheries data visualization using python"><meta property="og:image" content="https://LeoUtas.github.io/blogs/blog2/featured.png">
+  <meta property="twitter:image" content="https://LeoUtas.github.io/blogs/blog2/featured.png"><meta property="og:locale" content="en-us">
   
     
-      <meta property="article:published_time" content="2020-12-17T18:08:38-03:30">
+      <meta property="article:published_time" content="2020-12-28T00:00:00&#43;00:00">
     
-    <meta property="article:modified_time" content="2020-12-17T18:08:38-03:30">
+    <meta property="article:modified_time" content="2020-12-28T00:00:00&#43;00:00">
   
 
   
@@ -340,7 +340,7 @@
 
 
 
-  <title>Data visualization in fisheries science using Python | Hoang Nguyen</title>
+  <title>Bar charts in fisheries data visualization using python | Hoang Nguyen</title>
 
 </head>
 
@@ -446,7 +446,7 @@
         
 
         <li class="nav-item">
-          <a class="nav-link  active" href="/projects"><span>Projects</span></a>
+          <a class="nav-link " href="/projects"><span>Projects</span></a>
         </li>
 
         
@@ -468,7 +468,7 @@
         
 
         <li class="nav-item">
-          <a class="nav-link " href="/blogs"><span>Blogs</span></a>
+          <a class="nav-link  active" href="/blogs"><span>Blogs</span></a>
         </li>
 
         
@@ -517,7 +517,7 @@
   
   
 <div class="article-container pt-3">
-  <h1>Data visualization in fisheries science using Python</h1>
+  <h1>Bar charts in fisheries data visualization using python</h1>
 
   
 
@@ -534,7 +534,7 @@
   <span class="article-date">
     
     
-    Dec 17, 2020
+    Dec 28, 2020
   </span>
   
 
@@ -545,12 +545,15 @@
   
   
   
+  <span class="middot-divider"></span>
+  <a href="/blogs/blog2/#disqus_thread"></a>
+  
 
   
   
   <span class="middot-divider"></span>
   <span class="article-categories">
-    <i class="fas fa-tag mr-1"></i><a href="/category/python/">python</a>, <a href="/category/data-visualization/">data visualization</a></span>
+    <i class="fas fa-tag mr-1"></i><a href="/category/data-visualization/">data visualization</a>, <a href="/category/python/">python</a></span>
   
 
 </div>
@@ -569,6 +572,55 @@
 
 
 
+<div class="btn-links mb-3">
+  
+  
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  
+    
+  
+  
+  
+  
+  
+    
+  
+  <a class="btn btn-outline-primary my-1 mr-1" href="https://www.linkedin.com/in/hoangng84/" target="_blank" rel="noopener">
+    <i class="fab fa-linkedin mr-1"></i>
+    Follow
+  </a>
+
+
+</div>
+
 
   
 </div>
@@ -576,26 +628,146 @@
 
             <div class="article-container">
               <div class="article-style">
-                <p ><blockquote style="text-align: center;" cite = "https://en.wikipedia.org/wiki/A_picture_is_worth_a_thousand_words"> "A picture is worth a thousand words" </blockquote></p>
+                <p style="text-align: justify;">
+This example is a python version of a post titled "bar charts in visualizing fisheries data with R". The purpose of doing this post is that it would be interesting to develop my skills in more than one language. Therefore, if you don't mind, please look at <a href="\blogs\blog1\index.html" target ="blank"> this R version </a> to get the conceptional idea of plotting before jumping into the python syntax. So far, I feel that what I can do with R can also do with python, but the python code requires some switching thinking process. </p>
+<pre class="language-python"><code class="language-python">
+# importing useful libraries
+import matplotlib.pyplot as plt
+import pandas as pd
+import numpy as np
+</code></pre>
+<br>
+<h3 id="data-exploration">Data exploration</h3>
+<br>
+<pre class="language-python"><code class="language-python">
+# importing data
+age_at_length = pd.read_csv("age_length_data.csv")
+catch_at_length = pd.read_csv("catch_length.csv")
+# data exploration
+print(type(age_at_length))
+print(age_at_length.shape)
+print(age_at_length.dtypes)
+<p>print(type(catch_at_length))
+print(catch_at_length.shape)
+print(catch_at_length.dtypes)
+</code></pre></p>
+<pre><code>&lt;class 'pandas.core.frame.DataFrame'&gt;
+(65, 13)
+length    int64
+age.3     int64
+age.4     int64
+age.5     int64
+age.6     int64
+age.7     int64
+age.8     int64
+age.9     int64
+age.10    int64
+age.11    int64
+age.12    int64
+age.13    int64
+age.14    int64
+dtype: object
+&lt;class 'pandas.core.frame.DataFrame'&gt;
+(65, 2)
+Length    int64
+Count     int64
+dtype: object
+</code></pre>
+<br>
+<h3 id="visualization-of-catch-at-length">Visualization of catch at length</h3>
+<br>
+<pre class="language-python"><code class="language-python">
+plt.bar(catch_at_length.Length,catch_at_length.Count, color = "lightblue")
+plt.xlabel("length")
+plt.ylabel("Number of fish")
+plt.show()
+</code></pre>
+<p><img src="./index_6_0.svg" alt="svg"></p>
+<center>Figure 1. Barplot of Catch at length</center>
+<br>
+<h3 id="visualization-of-catch-at-age">Visualization of catch at age</h3>
+<br>
+<pre class="language-python"><code class="language-python">
+age_at_length_select = age_at_length.drop(["length"], axis=1)
+age_at_length["total"] = age_at_length_select.sum(axis=1)
+age_at_length_proportion = age_at_length_select.div(age_at_length.total, axis = 0)
+catch_at_age = age_at_length_proportion.mul(catch_at_length.Count, axis = 0)
+catch_at_age_sum = catch_at_age.sum(axis = 0)
+</code></pre>
+<pre class="language-python"><code class="language-python">
+plt.bar(pd.Series(np.arange(3,15,1)),catch_at_age_sum, color = "lightblue")
+plt.xlabel("Age")
+plt.ylabel("Number of fish")
+plt.show()
+</code></pre>
+<p><img src="./index_10_0.svg" alt="svg"></p>
+<center> Figure 2. Bar plot of catch at age </center>
+<br>
+<h3 id="visualization-of-the-distribution-of-age-at-length">Visualization of the distribution of age at length</h3>
+<br>
+<pre class="language-python"><code class="language-python">
+age_at_length_plot = age_at_length_proportion.plot(kind="bar", stacked = True, width = .8)
+age_at_length_plot.set_xticklabels(np.arange(53,118,1), rotation = 0)
+age_at_length_plot.xaxis.set_major_locator(plt.MaxNLocator(10))
+plt.legend(bbox_to_anchor = (1.25,1), loc = "upper right")
+plt.xlabel("Length")
+plt.ylabel("Frequency")
+plt.show()
+</code></pre>
+<p><img src="./index_13_0.svg" alt="svg"></p>
+<center> Figure 3. Bar plot of age at length distribution </center>
+<pre class="language-python"><code class="language-python">
+catch_at_length_ts = pd.read_csv("catch.at.length.ts1.csv")
+catch_at_length_ts_select = catch_at_length_ts.drop(["length"], axis = 1)
+</code></pre>
+<pre class="language-python"><code class="language-python">
+S1 = {}
+S2 = {}
+S3 = {}
+S4 = {}
 
-<p style="text-align: justify">This is a collection of fisheries visualization examples using python, inspired by the work of <a href = "https://scholar.google.ca/citations?user=e_VIsbsAAAAJ&hl=en" target = "blank"> Dr. Noel Cadigan </a>, <a href = "https://scholar.google.ca/citations?user=u4D9FmgAAAAJ&hl=en" target = "blank"> Dr. Jin Gao </a>, and <a href = "https://www.researchgate.net/profile/Malcolm_Haddon" target = "blank"> Dr. Malcolm Haddon. </a> </p>
+X = age_at_length_proportion
+Y = catch_at_length_ts_select
 
+for i in range(0, len(Y.columns)):
+    S1[i] = Y[Y.columns[i]]
+    S2[i] = X.mul(S1[i], axis = 0)
+    S3[i] = S2[i].apply(np.sum, axis = 0)
+    S4[i] = S3[i].div(S3[i].sum(axis = 0))
 
-<!-- Project information -->
-<br><br><br>
-<ul style="font-family: 'Courier New', Courier, monospace; font-size: .8rem;">
-    <li> Categories: personal project </li>
-    <li> Status: on-going </li>
-    <li> Timeline: Dec, 2020 to Feb, 2021 </li>
-</ul>
-
-<!-- back to top button  -->
-<script src="https://unpkg.com/vanilla-back-to-top@7.2.1/dist/vanilla-back-to-top.min.js"></script>
-<script>addBackToTop({
-  diameter: 80,
-  backgroundColor: '#5D7C96',
-  textColor: '#fff'
-})</script>
+col_name2 = np.arange(1959,2017,1)
+catch_at_age = pd.DataFrame(S4)
+catch_at_age = catch_at_age.set_axis(col_name2, axis = 1, inplace = False)
+catch_at_age_t = catch_at_age.T
+</code></pre>
+<br>
+<h3 id="visualization-of-the-distribution-of-catch-at-age-over-time">Visualization of the distribution of catch at age over time</h3>
+<br>
+<pre class="language-python"><code class="language-python">
+catch_at_age_plot = catch_at_age_t.plot(kind = "bar", stacked = True, width = .8)
+catch_at_age_plot.set_xticklabels(np.arange(1959,2017,1), rotation = 0)
+catch_at_age_plot.xaxis.set_major_locator(plt.MaxNLocator(12))
+plt.legend(bbox_to_anchor = (1.25,1), loc = "upper right")
+plt.xlabel("Year")
+plt.ylabel("Frequency")
+plt.show()
+</code></pre>
+<p><img src="./index_18_0.svg" alt="svg"></p>
+<center> Figure 4. Bar plot of catch at age over time </center>
+<p>Data for this post:</p>
+</p>
+<ol>
+<li>
+<a href="age_length_data.csv"> age at length </a>
+</li>
+<li>
+<a href="catch_length.csv"> catch at length </a>
+</li>
+<li>
+<a href="catch.at.length.ts1.csv"> catch at length for multiple years </a>
+</li>
+</ol>
+<p><br><br><br></p>
 
               </div>
               
@@ -607,9 +779,9 @@
 
 <div class="article-tags">
   
-  <a class="badge badge-light" href="/tag/python/">python</a>
-  
   <a class="badge badge-light" href="/tag/data-visualization/">data visualization</a>
+  
+  <a class="badge badge-light" href="/tag/python/">python</a>
   
 </div>
 
@@ -626,7 +798,7 @@
       
       
       <li>
-        <a href="https://twitter.com/intent/tweet?url=https://LeoUtas.github.io/projects/data-viz-in-fs-python/&amp;text=Data%20visualization%20in%20fisheries%20science%20using%20Python" target="_blank" rel="noopener" class="share-btn-twitter">
+        <a href="https://twitter.com/intent/tweet?url=https://LeoUtas.github.io/blogs/blog2/&amp;text=Bar%20charts%20in%20fisheries%20data%20visualization%20using%20python" target="_blank" rel="noopener" class="share-btn-twitter">
           <i class="fab fa-twitter"></i>
         </a>
       </li>
@@ -639,7 +811,7 @@
       
       
       <li>
-        <a href="https://www.facebook.com/sharer.php?u=https://LeoUtas.github.io/projects/data-viz-in-fs-python/&amp;t=Data%20visualization%20in%20fisheries%20science%20using%20Python" target="_blank" rel="noopener" class="share-btn-facebook">
+        <a href="https://www.facebook.com/sharer.php?u=https://LeoUtas.github.io/blogs/blog2/&amp;t=Bar%20charts%20in%20fisheries%20data%20visualization%20using%20python" target="_blank" rel="noopener" class="share-btn-facebook">
           <i class="fab fa-facebook"></i>
         </a>
       </li>
@@ -652,7 +824,7 @@
       
       
       <li>
-        <a href="mailto:?subject=Data%20visualization%20in%20fisheries%20science%20using%20Python&amp;body=https://LeoUtas.github.io/projects/data-viz-in-fs-python/" target="_blank" rel="noopener" class="share-btn-email">
+        <a href="mailto:?subject=Bar%20charts%20in%20fisheries%20data%20visualization%20using%20python&amp;body=https://LeoUtas.github.io/blogs/blog2/" target="_blank" rel="noopener" class="share-btn-email">
           <i class="fas fa-envelope"></i>
         </a>
       </li>
@@ -665,7 +837,7 @@
       
       
       <li>
-        <a href="https://www.linkedin.com/shareArticle?url=https://LeoUtas.github.io/projects/data-viz-in-fs-python/&amp;title=Data%20visualization%20in%20fisheries%20science%20using%20Python" target="_blank" rel="noopener" class="share-btn-linkedin">
+        <a href="https://www.linkedin.com/shareArticle?url=https://LeoUtas.github.io/blogs/blog2/&amp;title=Bar%20charts%20in%20fisheries%20data%20visualization%20using%20python" target="_blank" rel="noopener" class="share-btn-linkedin">
           <i class="fab fa-linkedin-in"></i>
         </a>
       </li>
@@ -802,6 +974,34 @@
 
 
 
+
+<section id="comments">
+  
+    
+<div id="disqus_thread"></div>
+<script>
+  var disqus_config = function () {
+    
+    
+    
+  };
+  (function() {
+    if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+      document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+      return;
+    }
+    var d = document, s = d.createElement('script'); s.async = true;
+    s.src = 'https://' + "HoangNg" + '.disqus.com/embed.js';
+    s.setAttribute('data-timestamp', +new Date());
+    (d.head || d.body).appendChild(s);
+  })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+
+
+  
+</section>
 
 
 

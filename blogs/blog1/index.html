@@ -634,33 +634,33 @@
 <script src="index_files/anchor-sections/anchor-sections.js"></script>
 
 
-<div id="get-to-know-your-data" class="section level3">
-<h3>Get to know your data</h3>
+<div id="data-exploration" class="section level3">
+<h3>Data exploration</h3>
 <p style="text-align: justify;">
 First thing first, it is usually required to know the data before working on it. There are many different ways to explore a data set using R. In this example, I just provide some functions that I frequently use for data exploration at work. Also, I assume that you already have some foundational knowledge about R programming. Furthermore, if you have some background in fisheries, this post would make a lot of sense.
 </p>
-<pre class="language-r"><code class="language-r"># importing data
+<pre class="language-r"><code class = "language-r"># importing data
 age.at.length &lt;- read.csv(&quot;age_length_data.csv&quot;)
 catch.at.length &lt;- read.csv(&quot;catch_length.csv&quot;)</code></pre>
-<pre class="language-r"><code class="language-r"># data exploration
+<pre class="language-r"><code class = "language-r"># data exploration
 class(age.at.length)</code></pre>
-<pre><code class="language-r">## [1] &quot;data.frame&quot;</code></pre>
-<pre class="language-r"><code class="language-r">dim(age.at.length) </code></pre>
-<pre><code class="language-r">## [1] 65 13</code></pre>
-<pre class="language-r"><code class="language-r">sapply(age.at.length, class)</code></pre>
-<pre><code class="language-r">##    length     age.3     age.4     age.5     age.6     age.7     age.8     age.9
+<pre><code class = "language-r">## [1] &quot;data.frame&quot;</code></pre>
+<pre class="language-r"><code class = "language-r">dim(age.at.length) </code></pre>
+<pre><code class = "language-r">## [1] 65 13</code></pre>
+<pre class="language-r"><code class = "language-r">sapply(age.at.length, class)</code></pre>
+<pre><code class = "language-r">##    length     age.3     age.4     age.5     age.6     age.7     age.8     age.9
 ## &quot;integer&quot; &quot;integer&quot; &quot;integer&quot; &quot;integer&quot; &quot;integer&quot; &quot;integer&quot; &quot;integer&quot; &quot;integer&quot;
 ##    age.10    age.11    age.12    age.13    age.14
 ## &quot;integer&quot; &quot;integer&quot; &quot;integer&quot; &quot;integer&quot; &quot;integer&quot;</code></pre>
 <p style="text-align: justify;">
 So far, I know that age.at.length contains the information of fish age and length and is a data frame consisting of 65 rows and 14 columns. Furthermore, the function sapply() tells me that all the values are integers.
 </p>
-<pre class="language-r"><code class="language-r">class(catch.at.length)</code></pre>
-<pre><code class="language-r">## [1] &quot;data.frame&quot;</code></pre>
-<pre class="language-r"><code class="language-r">dim(catch.at.length) </code></pre>
-<pre><code class="language-r">## [1] 65  2</code></pre>
-<pre class="language-r"><code class="language-r">sapply(catch.at.length, class)</code></pre>
-<pre><code class="language-r">##    Length     Count
+<pre class="language-r"><code class = "language-r">class(catch.at.length)</code></pre>
+<pre><code class = "language-r">## [1] &quot;data.frame&quot;</code></pre>
+<pre class="language-r"><code class = "language-r">dim(catch.at.length) </code></pre>
+<pre><code class = "language-r">## [1] 65  2</code></pre>
+<pre class="language-r"><code class = "language-r">sapply(catch.at.length, class)</code></pre>
+<pre><code class = "language-r">##    Length     Count
 ## &quot;integer&quot; &quot;integer&quot;</code></pre>
 <p style="text-align: justify;">
 The same technique is applied to explore the data of catch.at.length. It is a data frame of two variables: fish length and count (i.e., the number of fish) consisting of 65 records.
@@ -671,8 +671,8 @@ The same technique is applied to explore the data of catch.at.length. It is a da
 <p style="text-align: justify;">
 At this point, I would be curious to see how many fish are measured at a particular length. For this purpose, a bar plot can be generated using an R-base function. It is noted that ggplot2 or some other packages can do this type of plotting very well, but I would prefer to use simple techniques where possible.
 </p>
-<pre class="language-r"><code class="language-r">barplot(catch.at.length$Count,names=catch.at.length$Length,
-        xlab = &quot;Length&quot;, ylab = &quot;Number of fish&quot;, main = &quot;Catch at length&quot;,
+<pre class="language-r"><code class = "language-r">barplot(catch.at.length$Count,names=catch.at.length$Length,
+        xlab = &quot;Length&quot;, ylab = &quot;Number of fish&quot;,
         col = &quot;lightblue&quot;, border = NA)</code></pre>
 <img src="index_files/figure-html/unnamed-chunk-4-1.png" width="672" style="display: block; margin: auto;" />
 <center>
@@ -698,22 +698,22 @@ Generate a bar plot for the catch at age
 <p>
 R code for computing catch at age is shown bellow.
 </p>
-<pre class="language-r"><code class="language-r">library(dplyr)
+<pre class="language-r"><code class = "language-r">library(dplyr)
 age.at.length &lt;- age.at.length %&gt;% mutate(total=apply(age.at.length[,-1],1,sum)) # create a new column for the total of catch
 age.at.length.in.proportion &lt;- age.at.length[,c(2:14)]/age.at.length$total # compute the proportion of age at length
 catch.at.age &lt;- age.at.length.in.proportion*catch.at.length$Count # compute catch at age
 catch.at.age &lt;- apply(catch.at.age[,-13],2,sum, na.rm = T) # compute the total of catch for each age
 # view the catch at age data
 catch.at.age</code></pre>
-<pre><code class="language-r">##  age.3  age.4  age.5  age.6  age.7  age.8  age.9 age.10 age.11 age.12 age.13
+<pre><code class = "language-r">##  age.3  age.4  age.5  age.6  age.7  age.8  age.9 age.10 age.11 age.12 age.13
 ## 14.000 13.000 18.000 17.000 17.000 12.000 15.000 20.375 20.500 16.125 19.000
 ## age.14
 ## 18.000</code></pre>
 <p style="text-align: justify;">
 It is now simple to generate a bar chart for catch at age using an R-base code.
 </p>
-<pre class="language-r"><code class="language-r">barplot(catch.at.age,names=c(3:14),
-        xlab = &quot;Age&quot;, ylab = &quot;Number of fish&quot;, main = &quot;Catch at age&quot;,
+<pre class="language-r"><code class = "language-r">barplot(catch.at.age,names=c(3:14),
+        xlab = &quot;Age&quot;, ylab = &quot;Number of fish&quot;,
         col = &quot;lightblue&quot;, border = NA)</code></pre>
 <img src="index_files/figure-html/unnamed-chunk-6-1.png" width="672" style="display: block; margin: auto;" />
 <center>
@@ -725,7 +725,7 @@ Figure 2. Bar plot of catch at age
 <p style="text-align: justify;">
 At this point, I am aware that there are some fish of the same age, but their lengths are varied; also, some other fish having the same measurement of length, but their ages are different. How would the data be visualized to get a better insight into it? The code is shown below.
 </p>
-<pre class="language-r"><code class="language-r">age.at.length.in.proportion.t &lt;- t(age.at.length.in.proportion)
+<pre class="language-r"><code class = "language-r">age.at.length.in.proportion.t &lt;- t(age.at.length.in.proportion)
 colnames(age.at.length.in.proportion.t) &lt;- catch.at.length$Length
 row.names(age.at.length.in.proportion.t) &lt;- c(3:15)
 
@@ -733,7 +733,7 @@ library(RColorBrewer)
 options(warn = -1)
 col1 &lt;- brewer.pal(nrow(age.at.length.in.proportion.t), &quot;Paired&quot;)
 barplot(age.at.length.in.proportion.t[-13,], col = col1, xlim = c(0, 88),
-        xlab = &quot;Length (unit)&quot;, ylab = &quot;Frequency&quot;, main = &quot;The distribution of age at length&quot;, border = NA)
+        xlab = &quot;Length (unit)&quot;, ylab = &quot;Frequency&quot;, border = NA)
 legend1 &lt;- legend(&quot;topright&quot;,legend = c(3:14), title = &quot;Age&quot;, fill = col1, box.col = &quot;white&quot;)</code></pre>
 <img src="index_files/figure-html/unnamed-chunk-7-1.png" width="672" style="display: block; margin: auto;" />
 <center>
@@ -749,13 +749,13 @@ As shown in figure 3, it is clear that fish of length &gt; 116 cm is 14 years ol
 <p style="text-align: justify;">
 The example presented in figure 2 is the distribution of catch at age in one year. If the catch at length is recorded for many years by commercial fishers, also length at age is available from some ageing work. It would be interesting to see how the distribution of catch at age changes over time. A new data set called “catch.at.length.ts1.csv” is used for this example.
 </p>
-<pre class="language-r"><code class="language-r"># importing the data
+<pre class="language-r"><code class = "language-r"># importing the data
 catch.at.length.ts &lt;- read.csv(&quot;catch.at.length.ts1.csv&quot;)
 colnames(catch.at.length.ts) &lt;- c(&quot;length&quot;,array(1959:2016)) # re-name columns</code></pre>
 <p style="text-align: justify;">
 In figure 2 example, catch at age was computed for one year only; however, this example contains a series of years from 1959 to 2017. Therefore, the use of a for loop would make the calculation for multiple years efficient. The code is presented below.
 </p>
-<pre class="language-r"><code class="language-r">X &lt;- age.at.length.in.proportion[,-13]
+<pre class="language-r"><code class = "language-r">X &lt;- age.at.length.in.proportion[,-13]
 Y &lt;- catch.at.length.ts[,-1]
 
 S1 &lt;- list()
@@ -778,8 +778,8 @@ colnames(M) &lt;- c(1959:2016)</code></pre>
 <p style="text-align: justify;">
 Once the required data is ready, it will be simple to plot a bar chart to examine the distribution of catch at age over multiple years.
 </p>
-<pre class="language-r"><code class="language-r"># Proportion at age
-barplot(M, col = col1, xlim = c(0, 80), main = &quot;Propotion at age&quot;,
+<pre class="language-r"><code class = "language-r"># Proportion at age
+barplot(M, col = col1, xlim = c(0, 80),
         xlab = &quot;Year&quot;, ylab = &quot;Frequency&quot;, border = NA)
 legend1 &lt;- legend(&quot;topright&quot;,legend = c(3:14), title = &quot;Age&quot;, fill = col1, box.col = &quot;white&quot;)</code></pre>
 <img src="index_files/figure-html/unnamed-chunk-10-1.png" width="672" style="display: block; margin: auto;" />
@@ -790,11 +790,19 @@ Figure 4. Bar plot of catch at age over time
 <p style="text-align: justify;">
 This is the end of the first post in fisheries data visualization using R. The code presented here is just one of many ways to do the visualization. I hope you enjoy it. Please feel free to hit me up with your comments or questions.
 </p>
-<p style="text-align: justify;"> Data for this post: </p>
+<p style="text-align: justify;">
+Data for this post:
+</p>
 <ol>
-        <li><a href="age_length_data.csv" target="blank"> age at length </a></li>
-        <li><a href="catch_length.csv" target="blank"> catch at length </a></li>
-        <li><a href="catch.at.length.ts1.csv" target="blank"> catch at length for multiple years </a></li>
+<li>
+<a href="age_length_data.csv"> age at length </a>
+</li>
+<li>
+<a href="catch_length.csv"> catch at length </a>
+</li>
+<li>
+<a href="catch.at.length.ts1.csv"> catch at length for multiple years </a>
+</li>
 </ol>
 <p><br><br><br></p>
 </div>
