@@ -5,7 +5,7 @@
     <link>https://LeoUtas.github.io/blogs/</link>
       <atom:link href="https://LeoUtas.github.io/blogs/index.xml" rel="self" type="application/rss+xml" />
     <description>Blogs</description>
-    <generator>Wowchemy (https://wowchemy.com)</generator><language>en-us</language><copyright>© Hoang Nguyen, 2020</copyright><lastBuildDate>Mon, 28 Dec 2020 00:00:00 +0000</lastBuildDate>
+    <generator>Wowchemy (https://wowchemy.com)</generator><language>en-us</language><copyright>© Hoang Nguyen, 2021</copyright><lastBuildDate>Mon, 28 Dec 2020 00:00:00 +0000</lastBuildDate>
     <image>
       <url>https://LeoUtas.github.io/media/social.png</url>
       <title>Blogs</title>
@@ -156,9 +156,8 @@ plt.show()
 &lt;a href=&#34;catch.at.length.ts1.csv&#34;&gt; catch at length for multiple years &lt;/a&gt;
 &lt;/li&gt;
 &lt;/ol&gt;
-&lt;p&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;/p&gt;
-&lt;p&gt; To get back to &amp;nbsp;&amp;nbsp; &lt;i class=&#34;far fa-hand-point-right&#34;&gt;&lt;/i&gt; &amp;nbsp;&amp;nbsp; &lt;a href=&#34;../../../content/projects/data-viz-in-FS/index.html&#34;&gt; &lt;button class=&#34;button&#34; type=&#34;button&#34;&gt; data visualization in fisheries science&lt;/button&gt; &lt;/a&gt;&lt;/p&gt;
-&lt;br&gt;</description>
+&lt;br&gt;&lt;br&gt;
+</description>
     </item>
     
     <item>
@@ -331,6 +330,7 @@ This is the end of the first post in fisheries data visualization using R. The c
 &lt;p style=&#34;text-align: justify;&#34;&gt;
 Data for this post:
 &lt;/p&gt;
+
 &lt;ol&gt;
 &lt;li&gt;
 &lt;a href=&#34;age_length_data.csv&#34;&gt; age at length &lt;/a&gt;
@@ -342,13 +342,13 @@ Data for this post:
 &lt;a href=&#34;catch.at.length.ts1.csv&#34;&gt; catch at length for multiple years &lt;/a&gt;
 &lt;/li&gt;
 &lt;/ol&gt;
-&lt;p&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;/p&gt;
-&lt;/div&gt;
 
+&lt;br&gt;&lt;br&gt;
 
+&lt;!--
 
-&lt;p&gt; To get back to &amp;nbsp;&amp;nbsp; &lt;i class=&#34;far fa-hand-point-right&#34;&gt;&lt;/i&gt; &amp;nbsp;&amp;nbsp; &lt;a href=&#34;../../../content/projects/data-viz-in-FS/index.html&#34;&gt; &lt;button class=&#34;button&#34; type=&#34;button&#34;&gt; data visualization in fisheries science&lt;/button&gt; &lt;/a&gt;&lt;/p&gt;
-&lt;br&gt;
+&lt;p&gt; To get back to &amp;nbsp;&amp;nbsp; &lt;i class=&#34;far fa-hand-point-right&#34;&gt;&lt;/i&gt; &amp;nbsp;&amp;nbsp; &lt;a href=&#34;../../projects/data-viz-in-FS/index.html&#34;&gt; &lt;button class=&#34;button&#34; type=&#34;button&#34;&gt; data visualization in fisheries science&lt;/button&gt; &lt;/a&gt;&lt;/p&gt;
+&lt;br&gt; --&gt;
 
 &lt;!-- back to top button  --&gt;
 &lt;script src=&#34;https://unpkg.com/vanilla-back-to-top@7.2.1/dist/vanilla-back-to-top.min.js&#34;&gt;&lt;/script&gt;

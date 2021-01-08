@@ -1,0 +1,186 @@
+---
+title: "Bar charts in fisheries data visualization using R"
+summary: "This post is about bar charts for fisheries data visualization using R"
+author: "Hoang Nguyen"
+date: "2020-12-28"
+
+tags: [data visualization, R]
+categories: [data visualization, R]
+
+links:
+ - name: Follow
+   url: https://www.linkedin.com/in/hoangng84/
+   icon_pack: fab
+   icon: linkedin
+
+image:
+  caption: ""
+  focal_point: ""
+  preview_only: true
+  
+project: "data-viz-in-FS-R"
+widget: "blogs"
+
+output: html_document
+---
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(message = F, echo = T)
+```
+
+### Data exploration 
+
+<p style="text-align: justify;"> First thing first, it is usually required to know the data before working on it. There are many different ways to explore a data set using R. In this example, I just provide some functions that I frequently use for data exploration at work. Also, I assume that you already have some foundational knowledge about R programming. Furthermore, if you have some background in fisheries, this post would make a lot of sense. </p>
+
+```{r, message=F}
+# importing data
+age.at.length <- read.csv("age_length_data.csv")
+catch.at.length <- read.csv("catch_length.csv")
+```
+
+```{r}
+# data exploration
+class(age.at.length)
+dim(age.at.length) 
+sapply(age.at.length, class)
+```
+
+<p style="text-align: justify;"> So far, I know that age.at.length contains the information of fish age and length and is a data frame consisting of 65 rows and 14 columns. Furthermore, the function sapply() tells me that all the values are integers. </p>
+
+```{r}
+class(catch.at.length)
+dim(catch.at.length) 
+sapply(catch.at.length, class)
+```
+
+<p style="text-align: justify;"> The same technique is applied to explore the data of catch.at.length. It is a data frame of two variables: fish length and count (i.e., the number of fish) consisting of 65 records. </p>
+
+### Visualization of catch at length
+
+<p style="text-align: justify;"> At this point, I would be curious to see how many fish are measured at a particular length. For this purpose, a bar plot can be generated using an R-base function. It is noted that ggplot2 or some other packages can do this type of plotting very well, but I would prefer to use simple techniques where possible. </p>
+
+``` {r, fig.align="center"}
+barplot(catch.at.length$Count,names=catch.at.length$Length, 
+        xlab = "Length", ylab = "Number of fish", 
+        col = "lightblue", border = NA)
+```
+<center> Figure 1. Barplot of Catch at length </center>
+
+### Visualization of catch at age
+
+<p style="text-align: justify;"> At this stage, measurements of length at age and catch at length are available. I would be curious to see how many fish are caught at particular ages. For this purpose, catch at age data is required. The computation of generating catch at age is presented as follows.</p>
+<ol>
+<li> Compute the proportion of age at length </li>
+<li> Catch at age = proportion of age at length * catch at length </li>
+<li> Generate a bar plot for the catch at age</li>
+</ol>
+<p> R code for computing catch at age is shown bellow. </p>
+
+```{r}
+library(dplyr)
+age.at.length <- age.at.length %>% mutate(total=apply(age.at.length[,-1],1,sum)) # create a new column for the total of catch
+age.at.length.in.proportion <- age.at.length[,c(2:14)]/age.at.length$total # compute the proportion of age at length
+catch.at.age <- age.at.length.in.proportion*catch.at.length$Count # compute catch at age
+catch.at.age <- apply(catch.at.age[,-13],2,sum, na.rm = T) # compute the total of catch for each age
+# view the catch at age data
+catch.at.age
+```
+<p style="text-align: justify;"> It is now simple to generate a bar chart for catch at age using an R-base code. </p>
+```{r, fig.align="center"}
+barplot(catch.at.age,names=c(3:14),
+        xlab = "Age", ylab = "Number of fish", 
+        col = "lightblue", border = NA)
+```
+<center>
+Figure 2. Bar plot of catch at age 
+</center>
+
+### Visualization of the distribution of age at length
+
+<p style="text-align: justify;"> At this point, I am aware that there are some fish of the same age, but their lengths are varied; also, some other fish having the same measurement of length, but their ages are different. How would the data be visualized to get a better insight into it? The code is shown below. </p>
+
+```{r, fig.align="center"}
+age.at.length.in.proportion.t <- t(age.at.length.in.proportion)
+colnames(age.at.length.in.proportion.t) <- catch.at.length$Length
+row.names(age.at.length.in.proportion.t) <- c(3:15)
+
+library(RColorBrewer)
+options(warn = -1)
+col1 <- brewer.pal(nrow(age.at.length.in.proportion.t), "Paired") 
+barplot(age.at.length.in.proportion.t[-13,], col = col1, xlim = c(0, 88), 
+        xlab = "Length (unit)", ylab = "Frequency", border = NA)
+legend1 <- legend("topright",legend = c(3:14), title = "Age", fill = col1, box.col = "white")
+```
+<center>
+Figure 3. Bar plot of age at length distribution
+</center>
+<br>
+
+<p style="text-align: justify;"> As shown in figure 3, it is clear that fish of length > 116 cm is 14 years old. At the ages of 3, 4, and 5, their lengths distribute in three ranges (53-57, 65-69, and 73-79 cm), respectively. In contrast, the other age classes consist of fish with diverse length measurements.</p>
+
+### Visualization of the distribution of catch at age over time
+
+<p style="text-align: justify;"> The example presented in figure 2 is the distribution of catch at age in one year. If the catch at length is recorded for many years by commercial fishers, also length at age is available from some ageing work. It would be interesting to see how the distribution of catch at age changes over time. A new data set called "catch.at.length.ts1.csv" is used for this example. </p>
+
+```{r}
+# importing the data
+catch.at.length.ts <- read.csv("catch.at.length.ts1.csv")
+colnames(catch.at.length.ts) <- c("length",array(1959:2016)) # re-name columns
+```
+
+<p style="text-align: justify;"> In figure 2 example, catch at age was computed for one year only; however, this example contains a series of years from 1959 to 2017. Therefore, the use of a for loop would make the calculation for multiple years efficient. The code is presented below. </p>
+
+```{r}
+X <- age.at.length.in.proportion[,-13]
+Y <- catch.at.length.ts[,-1]
+
+S1 <- list()
+S2 <- list()
+S3 <- list()
+
+for (i in 1:ncol(Y)) {
+  S1[i] <- subset(Y, select = c(i))
+  S2[[i]] <- X * S1[[i]]
+  S3[[i]] <- apply(S2[[i]],2,sum,na.rm=T)
+}
+
+catch.at.age.ts <- as.data.frame(do.call(cbind,S3))
+colnames(catch.at.age.ts) <- c(1959:2016)
+row.names(catch.at.age.ts) <- c(3:14)
+
+M <- as.matrix(catch.at.age.ts)
+M <- M%*%diag(1/apply(M,2,sum))
+colnames(M) <- c(1959:2016)
+```
+
+<p style="text-align: justify;"> Once the required data is ready, it will be simple to plot a bar chart to examine the distribution of catch at age over multiple years. </p>
+
+```{r, fig.align="center"}
+# Proportion at age
+barplot(M, col = col1, xlim = c(0, 80),
+        xlab = "Year", ylab = "Frequency", border = NA)
+legend1 <- legend("topright",legend = c(3:14), title = "Age", fill = col1, box.col = "white")
+```
+<center>
+Figure 4. Bar plot of catch at age over time
+</center>
+<br>
+
+<p style="text-align: justify;"> This is the end of the first post in fisheries data visualization using R. The code presented here is just one of many ways to do the visualization. I hope you enjoy it. Please feel free to hit me up with your comments or questions. </p>
+
+<p style="text-align: justify;"> Data for this post: </p>
+
+<ol>
+<li><a > age at length </a></li>
+<li><a > catch at length </a></li>
+<li><a > catch at length for multiple years </a></li>
+</ol>
+
+
+
+
+
+
+
+
+
+<br><br><br>
